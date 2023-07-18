@@ -53,7 +53,7 @@ const Footer = () => {
                 alignItems={"center"}
                 justifyContent={"start"}
               >
-                <YouTube />
+                <Youtube />
                 <Typography variant="body" ml={1} fontSize={{ xs: 12, md: 18 }}>
                   RSBC Primes Marketing Consulting
                 </Typography>
