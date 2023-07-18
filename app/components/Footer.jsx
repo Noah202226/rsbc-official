@@ -1,4 +1,7 @@
-import { Facebook, Instagram, YouTube } from "@mui/icons-material";
+import Facebook from "@mui/icons-material/Facebook";
+import Instagram from "@mui/icons-material/Instagram";
+import Youtube from "@mui/icons-material/YouTube";
+
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
