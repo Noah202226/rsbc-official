@@ -34,8 +34,6 @@ const WelcomeBanner = () => {
 
     // Navigate to thank you
     router.push(`/emailsend`);
-
-    return NextResponse.json(res.json());
   };
 
   return (
