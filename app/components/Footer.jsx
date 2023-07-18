@@ -99,7 +99,8 @@ const Footer = () => {
         </Grid>
       </Grid>
       <Typography variant="body2" textAlign={"center"} mt={2}>
-        Copyright @2023 All rights reserved | This website is made by Noah
+        Copyright @2023 All rights reserved | This website is made by Noah -
+        Contact me @ noaligpitan26@gmail.com
       </Typography>
     </Box>
   );
