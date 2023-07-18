@@ -8,8 +8,8 @@ export async function POST(req) {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
   const msg = {
-    to: "noaligpitan@gmail.com", // Change to your recipient
-    from: "	noaligpitan26@gmail.com", // Change to your verified sender
+    to: "noaligpitan26@gmail.com", // Change to your recipient
+    from: "noaligpitan@gmail.com", // Change to your verified sender
     subject: `Inquery for ${clientEmail}`,
     text: "RSBC LOAN",
     html: `Client Desired Amount: <strong>${desiredAmount}</strong><br />
