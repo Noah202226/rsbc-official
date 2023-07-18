@@ -1,3 +1,5 @@
+"use client";
+
 import { Check } from "@mui/icons-material";
 import {
   Grid,

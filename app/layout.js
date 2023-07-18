@@ -1,4 +1,3 @@
-"use client";
 import { Container } from "@mui/material";
 import ElevateAppBar from "./components/ElevateAppBar";
 import "./globals.css";
