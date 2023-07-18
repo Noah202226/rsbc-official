@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { NextResponse } from "next/server";
 import React, { useState } from "react";
 
 const WelcomeBanner = () => {
@@ -23,15 +24,18 @@ const WelcomeBanner = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-    await fetch("/api/contact", {
+    const res = await fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify({ clientEmail, desiredAmount, loanDuration }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
 
     // Navigate to thank you
-    router.push(`/`);
+    router.push(`/emailsend`);
 
-    console.log(e);
+    return NextResponse.json(res.json());
   };
 
   return (
