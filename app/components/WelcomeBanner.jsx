@@ -30,6 +30,8 @@ const WelcomeBanner = () => {
 
     // Navigate to thank you
     router.push(`/`);
+
+    console.log(e);
   };
 
   return (

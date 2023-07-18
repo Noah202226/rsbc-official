@@ -5,9 +5,7 @@ const sgMail = require("@sendgrid/mail");
 export async function POST(req) {
   const { clientEmail, desiredAmount, loanDuration } = await req.json();
 
-  sgMail.setApiKey(
-    "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"
-  );
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
   const msg = {
     to: "noaligpitan@gmail.com", // Change to your recipient
