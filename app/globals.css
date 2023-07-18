@@ -1,0 +1,193 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: black;
+  background: white;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+img.content {
+  width: 100%;
+  height: 100%;
+}
+
+.words-wrapper {
+  box-sizing: content-box;
+  height: 70px;
+  padding: 50px 30px;
+  display: flex;
+  /* background-color: #ef4b4b; */
+}
+.words {
+  overflow: hidden;
+}
+
+span.word {
+  display: block;
+  height: 100%;
+  padding-left: 10px;
+  color: #ef4b4b;
+  animation: spin-word 6s infinite;
+  font-size: 3.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: underline;
+}
+
+@keyframes spin-word {
+  10% {
+    transform: translateY(-112%);
+  }
+  25% {
+    transform: translateY(-100%);
+  }
+  35% {
+    transform: translateY(-212%);
+  }
+  50% {
+    transform: translateY(-200%);
+  }
+  60% {
+    transform: translateY(-312%);
+  }
+  75% {
+    transform: translateY(-300%);
+  }
+  85% {
+    transform: translateY(-412%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+}
+
+/* Responsive header */
+/* Navbar container */
+.navbar {
+  /* background-color: red; */
+  width: 100%;
+  color: red;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 10px;
+
+  transition: all 3s ease-in-out;
+}
+
+/* Navbar links */
+.navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  transition: all 3s ease-in-out;
+}
+
+.navbar-links li {
+  margin-right: 20px;
+  transition: all 3s ease-in-out;
+}
+.navbar-links li:hover {
+  font-size: larger;
+  transition: all 3s ease-in-out;
+}
+
+.navbar-links li:last-child {
+  margin-right: 0;
+}
+
+.navbar-links a {
+  color: #004b4b;
+  text-decoration: none;
+
+  transition: all 3s ease-in-out;
+}
+
+/* Hamburger icon */
+.navbar-hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: #004b4b;
+  margin: 5px 0;
+
+  transition: all 0.5s ease-in-out;
+}
+.hamburger-line.hide {
+  transition: all 0.5s ease-in-out;
+  display: none; /* Hide the lines of the hamburger icon when the menu is open */
+}
+
+.hamburger-line.rotateTop {
+  width: 40px;
+  height: 3px;
+  transform: rotate(45deg); /* Rotate the top line to form an X */
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburger-line.rotateBottom {
+  width: 40px;
+  height: 3px;
+  transform: rotate(-45deg); /* Rotate the bottom line to form an X */
+  transition: all 0.5s ease-in-out;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: block;
+  }
+
+  .withBg {
+    background-size: contain;
+  }
+  .section-svg {
+    /* display: none; */
+    height: 100%;
+    width: 100%;
+  }
+  span.word {
+    font-size: 24px !important;
+  }
+
+  .rsbcLogo {
+    display: none;
+  }
+}
+.navbar-links.show {
+  background-color: #ccc;
+
+  padding: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 70%;
+  display: block; /* Show the menu links when the "show" class is applied */
+
+  transition: all 3s ease-in-out;
+}

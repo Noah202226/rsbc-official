@@ -1,0 +1,81 @@
+[debug] [2023-07-18T11:02:42.708Z] ----------------------------------------------------------------------
+[debug] [2023-07-18T11:02:42.711Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\NOAH\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-07-18T11:02:42.712Z] CLI Version:   12.4.4
+[debug] [2023-07-18T11:02:42.712Z] Platform:      win32
+[debug] [2023-07-18T11:02:42.712Z] Node Version:  v18.16.1
+[debug] [2023-07-18T11:02:42.713Z] Time:          Tue Jul 18 2023 19:02:42 GMT+0800 (Singapore Standard Time)
+[debug] [2023-07-18T11:02:42.713Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-18T11:02:42.815Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-18T11:02:42.816Z] > authorizing via signed-in user (noaligpitan26@gmail.com)
+[debug] [2023-07-18T11:02:42.817Z] [iam] checking project rsbc-bulacan-prime for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-07-18T11:02:42.820Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-bulacan-prime:testIamPermissions [none]
+[debug] [2023-07-18T11:02:42.821Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-bulacan-prime:testIamPermissions x-goog-quota-user=projects/rsbc-bulacan-prime
+[debug] [2023-07-18T11:02:42.821Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-bulacan-prime:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-07-18T11:02:43.789Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-bulacan-prime:testIamPermissions 200
+[debug] [2023-07-18T11:02:43.790Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-bulacan-prime:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-07-18T11:02:43.791Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rsbc-bulacan-prime [none]
+[debug] [2023-07-18T11:02:44.254Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rsbc-bulacan-prime 200
+[debug] [2023-07-18T11:02:44.254Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rsbc-bulacan-prime {"projectId":"rsbc-bulacan-prime","projectNumber":"70287958564","displayName":"rsbc-bulacan-prime","name":"projects/rsbc-bulacan-prime","resources":{"hostingSite":"rsbc-bulacan-prime"},"state":"ACTIVE","etag":"1_25817e2a-d09b-451c-a209-c55f001bbdf2"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info] - info Creating an optimized production build...
+
+[info] - info Compiled successfully
+
+[info] - info Linting and checking validity of types...
+
+[info] - info Collecting page data...
+
+[info] - info Generating static pages (0/9)
+
+[info] - info Generating static pages (2/9)
+
+[info] - info Generating static pages (4/9)
+
+[info] - info Generating static pages (6/9)
+
+[info] - info Generating static pages (9/9)
+
+[info] - info Finalizing page optimization...
+
+[info] 
+
+[info] Route (app)                                Size     First Load JS
+┌ ○ /                                      178 kB          318 kB
+├ ○ /about                                 146 B          77.9 kB
+├ λ /api/contact                           0 B                0 B
+├ ○ /contact                               1.01 kB         133 kB
+├ ○ /favicon.ico                           0 B                0 B
+├ ○ /inquiry-send                          146 B          77.9 kB
+└ ○ /services                              146 B          77.9 kB
++ First Load JS shared by all              77.7 kB
+  ├ chunks/961-197ee1a45b4f13ac.js         25.3 kB
+  ├ chunks/bce60fc1-3b2a5bd7220cf0d9.js    50.5 kB
+  ├ chunks/main-app-67d7db764d1c889f.js    222 B
+  └ chunks/webpack-152970f7c98971c5.js     1.68 kB
+
+Route (pages)                              Size     First Load JS
+─ ○ /404                                   183 B          75.6 kB
++ First Load JS shared by all              75.5 kB
+  ├ chunks/framework-43665103d101a22d.js   45.1 kB
+  ├ chunks/main-e4c3d3d7c57d5c20.js        28.5 kB
+  ├ chunks/pages/_app-6b79a29ad0d63b21.js  199 B
+  └ chunks/webpack-152970f7c98971c5.js     1.68 kB
+
+[info] 
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+
+[debug] [2023-07-18T11:03:33.958Z] Error: ENOENT: no such file or directory, open 'D:\My Files\Programing\JavaScript\NextJS\rsbc-website\.next\server\client-reference-manifest.js'
+[error] 
+[error] Error: An unexpected error has occurred.
