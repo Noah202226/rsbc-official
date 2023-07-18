@@ -24,16 +24,18 @@ const WelcomeBanner = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("/api/contact", {
+    await fetch("/api/contact", {
       method: "POST",
       body: JSON.stringify({ clientEmail, desiredAmount, loanDuration }),
       headers: {
         "Content-Type": "application/json",
       },
-    });
-
-    // Navigate to thank you
-    router.push(`/emailsend`);
+    })
+      .then(
+        // Navigate to thank you
+        router.push(`/emailsend`)
+      )
+      .catch((e) => console.log(e));
   };
 
   return (
