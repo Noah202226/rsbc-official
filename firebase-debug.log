@@ -1,22 +1,22 @@
-[debug] [2023-07-18T11:02:42.708Z] ----------------------------------------------------------------------
-[debug] [2023-07-18T11:02:42.711Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\NOAH\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
-[debug] [2023-07-18T11:02:42.712Z] CLI Version:   12.4.4
-[debug] [2023-07-18T11:02:42.712Z] Platform:      win32
-[debug] [2023-07-18T11:02:42.712Z] Node Version:  v18.16.1
-[debug] [2023-07-18T11:02:42.713Z] Time:          Tue Jul 18 2023 19:02:42 GMT+0800 (Singapore Standard Time)
-[debug] [2023-07-18T11:02:42.713Z] ----------------------------------------------------------------------
+[debug] [2023-07-18T11:22:35.140Z] ----------------------------------------------------------------------
+[debug] [2023-07-18T11:22:35.143Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\NOAH\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-07-18T11:22:35.144Z] CLI Version:   12.4.4
+[debug] [2023-07-18T11:22:35.145Z] Platform:      win32
+[debug] [2023-07-18T11:22:35.145Z] Node Version:  v18.16.1
+[debug] [2023-07-18T11:22:35.146Z] Time:          Tue Jul 18 2023 19:22:35 GMT+0800 (Singapore Standard Time)
+[debug] [2023-07-18T11:22:35.146Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-07-18T11:02:42.815Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-07-18T11:02:42.816Z] > authorizing via signed-in user (noaligpitan26@gmail.com)
-[debug] [2023-07-18T11:02:42.817Z] [iam] checking project rsbc-bulacan-prime for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2023-07-18T11:02:42.820Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-bulacan-prime:testIamPermissions [none]
-[debug] [2023-07-18T11:02:42.821Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-bulacan-prime:testIamPermissions x-goog-quota-user=projects/rsbc-bulacan-prime
-[debug] [2023-07-18T11:02:42.821Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-bulacan-prime:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-07-18T11:02:43.789Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-bulacan-prime:testIamPermissions 200
-[debug] [2023-07-18T11:02:43.790Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-bulacan-prime:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-07-18T11:02:43.791Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rsbc-bulacan-prime [none]
-[debug] [2023-07-18T11:02:44.254Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rsbc-bulacan-prime 200
-[debug] [2023-07-18T11:02:44.254Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rsbc-bulacan-prime {"projectId":"rsbc-bulacan-prime","projectNumber":"70287958564","displayName":"rsbc-bulacan-prime","name":"projects/rsbc-bulacan-prime","resources":{"hostingSite":"rsbc-bulacan-prime"},"state":"ACTIVE","etag":"1_25817e2a-d09b-451c-a209-c55f001bbdf2"}
+[debug] [2023-07-18T11:22:35.278Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-18T11:22:35.279Z] > authorizing via signed-in user (noaligpitan@gmail.com)
+[debug] [2023-07-18T11:22:35.279Z] [iam] checking project rsbc-marketing for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-07-18T11:22:35.283Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-marketing:testIamPermissions [none]
+[debug] [2023-07-18T11:22:35.283Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-marketing:testIamPermissions x-goog-quota-user=projects/rsbc-marketing
+[debug] [2023-07-18T11:22:35.283Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-marketing:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-07-18T11:22:36.253Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-marketing:testIamPermissions 200
+[debug] [2023-07-18T11:22:36.254Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rsbc-marketing:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-07-18T11:22:36.257Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/rsbc-marketing [none]
+[debug] [2023-07-18T11:22:37.050Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/rsbc-marketing 200
+[debug] [2023-07-18T11:22:37.051Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/rsbc-marketing {"projectId":"rsbc-marketing","projectNumber":"463455355782","displayName":"rsbc-marketing","name":"projects/rsbc-marketing","resources":{"hostingSite":"rsbc-marketing"},"state":"ACTIVE","etag":"1_c72fec94-033f-4991-b207-fd3f93db0ec8"}
 [info] 
    Thank you for trying our early preview of Next.js support on Firebase Hosting.
    During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
@@ -76,6 +76,6 @@ Route (pages)                              Size     First Load JS
 ○  (Static)  automatically rendered as static HTML (uses no initial props)
 
 
-[debug] [2023-07-18T11:03:33.958Z] Error: ENOENT: no such file or directory, open 'D:\My Files\Programing\JavaScript\NextJS\rsbc-website\.next\server\client-reference-manifest.js'
+[debug] [2023-07-18T11:23:26.081Z] Error: ENOENT: no such file or directory, open 'D:\My Files\Programing\JavaScript\NextJS\rsbc-website\.next\server\client-reference-manifest.js'
 [error] 
 [error] Error: An unexpected error has occurred.
