@@ -59,6 +59,7 @@ const WelcomeBanner = () => {
         },
         (error) => {
           console.log(error.text);
+          alert("Email not sent.", error);
         }
       );
   };
