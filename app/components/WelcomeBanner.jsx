@@ -16,7 +16,7 @@ import React, { useRef } from "react";
 
 import emailjs from "@emailjs/browser";
 
-const WelcomeBanner = () => {
+const WelcomeBanner = ({ selectedAgent }) => {
   const router = useRouter();
 
   const form = useRef();
@@ -153,6 +153,8 @@ const WelcomeBanner = () => {
               <input type="email" name="user_email" />
               <label>Message</label>
               <textarea name="message" />
+              <label>Referral</label>
+              <input type="text" name="user_referral" value={selectedAgent} />
               <input type="submit" value="Send" />
             </form>
           </Paper>

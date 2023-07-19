@@ -23,16 +23,22 @@ const AgentList = () => {
       {agentsList.length > 0 ? (
         agentsList?.map((agent) => (
           <Card key={agent.id} sx={{ p: 1, mt: 1 }}>
-            <Stack>
-              <Typography>{`Agent Name: ${agent?.data.name}`}</Typography>
-            </Stack>
+            <Stack
+              flexDirection={"row"}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+            >
+              <Stack>
+                <Typography>{`Agent Name: ${agent?.data.name}`}</Typography>
+              </Stack>
 
-            <Stack>
-              <Button color="success" onClick={() => console.log(agent.id)}>
-                <Update />
-              </Button>
+              <Stack flexDirection={"row"}>
+                <Button color="success" onClick={() => console.log(agent.id)}>
+                  <Update />
+                </Button>
 
-              <DeleteAgent agentId={agent.id} />
+                <DeleteAgent agentId={agent.id} />
+              </Stack>
             </Stack>
           </Card>
         ))

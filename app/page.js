@@ -1,11 +1,26 @@
+"use client";
 import WelcomeBanner from "./components/WelcomeBanner";
 import Section from "./components/Section";
 import ImagesContent from "./components/ImagesContent";
+import { useEffect, useState } from "react";
+import { db } from "./utils/firebase";
+import { collection, onSnapshot } from "firebase/firestore";
 
 export default function Home() {
+  const [selectedAgent, setSelectedAgent] = useState();
+
+  const colRef = collection(db, "activeReferral");
+  useEffect(() => {
+    console.log("fetching agents");
+    onSnapshot(colRef, (snapshot) => {
+      snapshot.docs.map((doc) => {
+        setSelectedAgent(doc.data().name);
+      });
+    });
+  }, []);
   return (
     <>
-      <WelcomeBanner />
+      <WelcomeBanner selectedAgent={selectedAgent} />
       <Section />
       <ImagesContent />
     </>
