@@ -19,28 +19,28 @@ const Header = () => {
           </Typography>
         </Link>
         <ul className={`navbar-links ${showMenu ? "show" : ""}`}>
-          <li>
+          <li onClick={toggleMenu}>
             <Link href={"/"}>
               <Typography variant="h6" fontFamily={"sans-serif"}>
                 Home
               </Typography>
             </Link>
           </li>
-          <li>
+          <li onClick={toggleMenu}>
             <Link href={"/services"}>
               <Typography variant="h6" fontFamily={"sans-serif"}>
                 Services
               </Typography>
             </Link>
           </li>
-          <li>
+          <li onClick={toggleMenu}>
             <Link href={"/about"}>
               <Typography variant="h6" fontFamily={"sans-serif"}>
                 About
               </Typography>
             </Link>
           </li>
-          <li>
+          <li onClick={toggleMenu}>
             <Link href={"/contact"}>
               <Typography variant="h6" fontFamily={"sans-serif"}>
                 Contact
