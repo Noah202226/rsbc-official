@@ -46,14 +46,16 @@ const WelcomeBanner = () => {
 
     emailjs
       .sendForm(
-        "service_fm0ot7q",
-        "template_krr6vzm",
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
         form.current,
-        "4oaLvmxZtMd0y5oSI"
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
       )
       .then(
         (result) => {
           console.log(result.text);
+          alert("Email sent.");
+          form.current.reset();
         },
         (error) => {
           console.log(error.text);
