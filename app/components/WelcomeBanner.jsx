@@ -48,18 +48,18 @@ const WelcomeBanner = ({ selectedAgent }) => {
   return (
     <Box
       className="withBg"
-      sx={{
-        backgroundImage: "url('/atm-banner.jpg')",
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-        // backgroundPosition: "-100px 10px",
-      }}
+      // sx={{
+      //   backgroundImage: "url('/atm-banner.jpg')",
+      //   backgroundSize: "contain",
+      //   backgroundRepeat: "no-repeat",
+      //   // backgroundPosition: "-100px 10px",
+      // }}
     >
       <Grid container>
-        <Grid item xs={12} md={6} sx={{ height: "90vh" }}>
+        <Grid item xs={12} md={6} sx={{ height: { xs: "100%", md: "90vh" } }}>
           <Stack
             alignItems={"start"}
-            justifyContent={"space-around"}
+            justifyContent={"space-evenly"}
             height={"100%"}
             padding={2}
           >
@@ -89,10 +89,10 @@ const WelcomeBanner = ({ selectedAgent }) => {
 
             <Stack
               flexDirection={"column"}
-              alignItems={"flex-end"}
+              alignItems={"flex-start"}
               justifyContent={"flex-end"}
             >
-              <Typography variant="h5" textAlign={"end"} color={"#ef4b4b"}>
+              <Typography variant="h5" textAlign={"start"} color={"#ef4b4b"}>
                 Get cash in a flash!
               </Typography>
 
@@ -100,9 +100,9 @@ const WelcomeBanner = ({ selectedAgent }) => {
                 variant="h4"
                 textAlign={{ xs: "center", md: "start" }}
                 sx={{ textDecoration: "underline" }}
-                fontSize={{ xs: 21, md: 40 }}
+                fontSize={{ xs: 21, md: 28 }}
               >
-                RSBC Bulacan <br /> Primes Marketing <br /> Consulting
+                RSBC Bulacan Primes Marketing Consulting
               </Typography>
             </Stack>
           </Stack>
@@ -124,9 +124,9 @@ const WelcomeBanner = ({ selectedAgent }) => {
             sx={{
               zIndex: 999,
               padding: 1,
-              background: "rgba(240,241,243,.8)",
-              color: "black",
-              textShadow: ".5px 0px 1px black",
+              background: "#ef4b4b",
+              color: "white",
+              textShadow: ".5px 1px 1px black",
             }}
           >
             <Typography
@@ -144,16 +144,19 @@ const WelcomeBanner = ({ selectedAgent }) => {
               mos,24mos up to 36mos to pay.
             </Typography>
           </Card>
-          <Paper sx={{ padding: 1, width: 500, opacity: 0.9 }} elevation={5}>
+          <Paper sx={{ padding: 1, width: "100%", opacity: 0.9 }} elevation={5}>
             <form
               ref={form}
               onSubmit={sendData}
-              style={{ display: "flex", flexDirection: "column" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
             >
               <Typography mb={1} variant="body" textAlign={"start"}>
                 Fill out the form.
               </Typography>
-              <Stack flexDirection={"row"}>
+              <Stack flexDirection={{ xs: "column", md: "row" }}>
                 <TextField
                   sx={{ mb: 1 }}
                   fullWidth
@@ -163,7 +166,7 @@ const WelcomeBanner = ({ selectedAgent }) => {
                   required
                 />
                 <TextField
-                  sx={{ ml: 1 }}
+                  sx={{ ml: { xs: 0, md: 1 }, mb: { xs: 1, md: 0 } }}
                   fullWidth
                   type="email"
                   name="user_email"
@@ -172,7 +175,7 @@ const WelcomeBanner = ({ selectedAgent }) => {
                 />
               </Stack>
 
-              <Stack flexDirection={"row"}>
+              <Stack flexDirection={{ xs: "column", md: "row" }}>
                 <FormControl fullWidth sx={{ mb: 1 }} required>
                   <InputLabel id="demo-simple-select-label">
                     Desire amount
@@ -188,7 +191,11 @@ const WelcomeBanner = ({ selectedAgent }) => {
                   </Select>
                 </FormControl>
 
-                <FormControl fullWidth sx={{ ml: 1 }} required>
+                <FormControl
+                  fullWidth
+                  sx={{ ml: { xs: 0, md: 1 }, mb: { xs: 1, md: 0 } }}
+                  required
+                >
                   <InputLabel id="demo-simple-select-label">
                     Loan duration
                   </InputLabel>

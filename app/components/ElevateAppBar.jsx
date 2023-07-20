@@ -7,6 +7,7 @@ import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Header from "./Header";
+import { Box } from "@mui/material";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -35,7 +36,7 @@ ElevationScroll.propTypes = {
 
 export default function ElevateAppBar(props) {
   return (
-    <React.Fragment>
+    <Box bgcolor={"red"}>
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar
@@ -51,6 +52,6 @@ export default function ElevateAppBar(props) {
         </AppBar>
       </ElevationScroll>
       <Toolbar />
-    </React.Fragment>
+    </Box>
   );
 }

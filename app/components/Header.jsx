@@ -1,6 +1,6 @@
 "use client";
 
-import { Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -11,6 +11,18 @@ const Header = () => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  function smoothScrollTo(target) {
+    const element = document.getElementById(target);
+    console.log("scrolling..");
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
+  }
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -20,13 +32,7 @@ const Header = () => {
             alignItems={"center"}
             justifyContent={"space-between"}
           >
-            <Image
-              alt="rsbcLogo"
-              className="rsbcLogo"
-              src={"/rsbc.jpg"}
-              width={30}
-              height={30}
-            />
+            <Image alt="rsbcLogo" src={"/rsbc.jpg"} width={30} height={30} />
             <Typography
               variant="h4"
               fontFamily={"serif"}
@@ -39,32 +45,40 @@ const Header = () => {
         </Link>
         <ul className={`navbar-links ${showMenu ? "show" : ""}`}>
           <li onClick={showMenu ? toggleMenu : () => {}}>
-            <Link href={"/"}>
-              <Typography variant="h6" fontFamily={"serif"}>
-                Home
-              </Typography>
-            </Link>
+            <Typography
+              variant="h6"
+              fontFamily={"serif"}
+              onClick={() => smoothScrollTo("header")}
+            >
+              Home
+            </Typography>
           </li>
           <li onClick={showMenu ? toggleMenu : () => {}}>
-            <Link href={"/services"}>
-              <Typography variant="h6" fontFamily={"serif"}>
-                Services
-              </Typography>
-            </Link>
+            <Typography
+              variant="h6"
+              fontFamily={"serif"}
+              onClick={() => smoothScrollTo("footer")}
+            >
+              Services
+            </Typography>
           </li>
           <li onClick={showMenu ? toggleMenu : () => {}}>
-            <Link href={"/about"}>
-              <Typography variant="h6" fontFamily={"serif"}>
-                About
-              </Typography>
-            </Link>
+            <Typography
+              variant="h6"
+              fontFamily={"serif"}
+              onClick={() => smoothScrollTo("footer")}
+            >
+              About
+            </Typography>
           </li>
           <li onClick={showMenu ? toggleMenu : () => {}}>
-            <Link href={"/contact"}>
-              <Typography variant="h6" fontFamily={"serif"}>
-                Contact
-              </Typography>
-            </Link>
+            <Typography
+              variant="h6"
+              fontFamily={"serif"}
+              onClick={() => smoothScrollTo("footer")}
+            >
+              Contact
+            </Typography>
           </li>
         </ul>
         <div className={"navbar-hamburger"} onClick={toggleMenu}>

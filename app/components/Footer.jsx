@@ -9,7 +9,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <Box sx={{ background: "#004B4B", color: "white", padding: 2 }}>
+    <Box id="footer" sx={{ background: "#004B4B", color: "white", padding: 2 }}>
       <Grid container>
         <Grid item xs={12} md={4} mt={{ xs: 2, md: 0 }}>
           <Typography variant="h4">RSBC</Typography>
