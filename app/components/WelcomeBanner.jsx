@@ -2,8 +2,11 @@
 import {
   Box,
   Button,
+  Card,
   FormControl,
   Grid,
+  InputLabel,
+  MenuItem,
   Paper,
   Select,
   Stack,
@@ -17,32 +20,10 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const WelcomeBanner = ({ selectedAgent }) => {
-  const router = useRouter();
-
   const form = useRef();
 
   const sendData = async (e) => {
     e.preventDefault();
-
-    // const data = {
-    //   desiredAmount: form.current.children[2].children[0].children[0].value,
-    //   loanDuration: form.current.children[3].children[0].children[0].value,
-    //   clientEmail: form.current.children[4].children[1].children[0].value,
-    // };
-    // console.log(data);
-
-    // await fetch("/api/contact", {
-    //   method: "POST",
-    //   body: JSON.stringify({ clientEmail, desiredAmount, loanDuration }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then(
-    //     // Navigate to thank you
-    //     router.push(`/emailsend`)
-    //   )
-    //   .catch((e) => console.log(e));
 
     emailjs
       .sendForm(
@@ -54,12 +35,12 @@ const WelcomeBanner = ({ selectedAgent }) => {
       .then(
         (result) => {
           console.log(result.text);
-          alert("Email sent.");
           form.current.reset();
+          alert("Email sent.");
         },
         (error) => {
           console.log(error.text);
-          alert("Email not sent.", error);
+          alert("Email not sent.", error.text);
         }
       );
   };
@@ -133,8 +114,9 @@ const WelcomeBanner = ({ selectedAgent }) => {
           md={6}
           sx={{
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "space-evenly",
           }}
         >
           <Image
@@ -145,17 +127,110 @@ const WelcomeBanner = ({ selectedAgent }) => {
             height={150}
             style={{ position: "absolute", top: 60, right: 20 }}
           />
-          <Paper sx={{ padding: 2, width: 500, opacity: 0.9 }} elevation={5}>
-            <form ref={form} onSubmit={sendData}>
-              <label>Name</label>
-              <input type="text" name="user_name" />
-              <label>Email</label>
-              <input type="email" name="user_email" />
-              <label>Message</label>
-              <textarea name="message" />
-              <label>Referral</label>
-              <input type="text" name="user_referral" value={selectedAgent} />
-              <input type="submit" value="Send" />
+          <Card
+            elevation={3}
+            sx={{
+              zIndex: 999,
+              padding: 1,
+              background: "rgba(240,241,243,.8)",
+              color: "black",
+              textShadow: ".5px 0px 1px black",
+            }}
+          >
+            <Typography
+              variant="body"
+              textAlign={"center"}
+              justifyContent={"center"}
+              justifySelf={"center"}
+            >
+              We offer Bank Cash Loan with No Collateral and No Co-maker for as
+              low as 1.39% up to 1.99% per month.
+            </Typography>
+            <br />
+            <Typography variant="body">
+              Loanable amount from 20K up to 2M- Loan Term from 12 mos,18
+              mos,24mos up to 36mos to pay.
+            </Typography>
+          </Card>
+          <Paper sx={{ padding: 1, width: 500, opacity: 0.9 }} elevation={5}>
+            <form
+              ref={form}
+              onSubmit={sendData}
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              <Typography mb={1} variant="body" textAlign={"start"}>
+                Fill out the form.
+              </Typography>
+              <Stack flexDirection={"row"}>
+                <TextField
+                  sx={{ mb: 1 }}
+                  fullWidth
+                  type="text"
+                  name="user_name"
+                  placeholder="Your name"
+                  required
+                />
+                <TextField
+                  sx={{ ml: 1 }}
+                  fullWidth
+                  type="email"
+                  name="user_email"
+                  placeholder="Your email"
+                  required
+                />
+              </Stack>
+
+              <Stack flexDirection={"row"}>
+                <FormControl fullWidth sx={{ mb: 1 }} required>
+                  <InputLabel id="demo-simple-select-label">
+                    Desire amount
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    name="desired_amount"
+                  >
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                  </Select>
+                </FormControl>
+
+                <FormControl fullWidth sx={{ ml: 1 }} required>
+                  <InputLabel id="demo-simple-select-label">
+                    Loan duration
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    name="loan_duration"
+                  >
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                  </Select>
+                </FormControl>
+              </Stack>
+
+              <TextField
+                type="text"
+                name="message"
+                placeholder="Some message"
+                multiline
+                sx={{ mb: 1 }}
+              />
+
+              <TextField
+                type="hidden"
+                name="user_referral"
+                disabled
+                value={selectedAgent}
+                required
+              />
+
+              <Button type="submit" variant="contained" color="success">
+                Get Cash.
+              </Button>
             </form>
           </Paper>
         </Grid>
