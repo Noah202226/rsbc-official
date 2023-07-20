@@ -86,7 +86,7 @@ span.word {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 10px;
+  padding-inline: 1rem;
 
   transition: all 3s ease-in-out;
 }
@@ -102,12 +102,13 @@ span.word {
 }
 
 .navbar-links li {
-  margin-right: 20px;
+  margin-right: 1.5rem;
   transition: all 3s ease-in-out;
 }
 .navbar-links li:hover {
   font-size: larger;
   transition: all 3s ease-in-out;
+  color: #ef4b4b;
 }
 
 .navbar-links li:last-child {
@@ -119,6 +120,9 @@ span.word {
   text-decoration: none;
 
   transition: all 3s ease-in-out;
+}
+.navbar-links a:hover {
+  color: #ef4b4b;
 }
 
 /* Hamburger icon */

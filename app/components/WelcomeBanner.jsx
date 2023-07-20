@@ -119,14 +119,6 @@ const WelcomeBanner = ({ selectedAgent }) => {
             justifyContent: "space-evenly",
           }}
         >
-          <Image
-            alt="rsbcLogo"
-            className="rsbcLogo"
-            src={"/rsbc.jpg"}
-            width={150}
-            height={150}
-            style={{ position: "absolute", top: 60, right: 20 }}
-          />
           <Card
             elevation={3}
             sx={{
@@ -228,8 +220,21 @@ const WelcomeBanner = ({ selectedAgent }) => {
                 required
               />
 
-              <Button type="submit" variant="contained" color="success">
-                Get Cash.
+              <Button
+                type="submit"
+                variant="contained"
+                color="success"
+                sx={{
+                  // background: "rgb(240,63,70)",
+                  background:
+                    "linear-gradient(90deg, rgba(240,63,70,1) 40%, rgba(255,0,0,1) 100%)",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, rgba(212,6,14,1) 0%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
+                  },
+                }}
+              >
+                Get Cash Now
               </Button>
             </form>
           </Paper>
