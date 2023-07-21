@@ -80,24 +80,19 @@ const Footer = () => {
         </Grid>
 
         <Grid item xs={12} md={4} mt={{ xs: 2, md: 0 }}>
-          <Stack>
-            <Typography variant="h6" fontSize={{ xs: 12, md: 18 }}>
-              Open Hours We work all days a week,
-            </Typography>
-            <Typography variant="h6" fontSize={{ xs: 12, md: 18 }}>
-              Please contact us for any inquiry.
-            </Typography>
+          <Typography variant="h4">Business Hours</Typography>
 
+          <Stack>
             <Typography fontSize={{ xs: 12, md: 18 }}>
-              Monday - Friday: 11:00 am - 8:00 pm
+              Monday - Friday: 9:00 am - 5:00 pm
             </Typography>
 
             <Typography fontSize={{ xs: 12, md: 18 }}>
               Saturday: 10:00 am - 6:00 pm
             </Typography>
 
-            <Typography fontSize={{ xs: 12, md: 18 }}>
-              Sunday: 11:00 am - 6:00 pm
+            <Typography variant="h6" fontSize={{ xs: 12, md: 18 }}>
+              Please contact us for any inquiry.
             </Typography>
           </Stack>
         </Grid>

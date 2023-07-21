@@ -42,10 +42,10 @@ img.content {
 span.word {
   display: block;
   height: 100%;
-  padding-left: 10px;
+  padding-left: 3rem;
   color: #ef4b4b;
   animation: spin-word 6s infinite;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: underline;
   text-shadow: 1px 1px 1px #004b4b;
@@ -111,7 +111,8 @@ span.word {
 }
 .navbar-links li h6:hover {
   transition: all 1ms ease-in-out;
-  color: #ef4b4b !important;
+  color: red !important;
+  /* color: #ef4b4b !important; */
 }
 
 .navbar-links li:last-child {
@@ -125,7 +126,8 @@ span.word {
   transition: all 3s ease-in-out;
 }
 .navbar-links a:hover {
-  color: #ef4b4b;
+  /* color: #ef4b4b; */
+  color: "red";
 }
 
 /* Hamburger icon */
@@ -161,6 +163,50 @@ span.word {
   transition: all 0.5s ease-in-out;
 }
 
+/* Banner */
+.bannerImage {
+  /* width: fit-content !important; */
+
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  /* margin: 1rem; */
+  margin-top: 2rem;
+  margin-left: 1rem;
+  z-index: -999;
+}
+
+/* BounceAnimation.module.css */
+.bounceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.bouncingElement {
+  /* width: 50px;
+  height: 50px; */
+  /* background-color: #007bff; */
+  /* border-radius: 50%; */
+  animation: bounceAnimation 1s infinite ease-in-out;
+}
+
+@keyframes bounceAnimation {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-20px);
+  }
+  60% {
+    transform: translateX(-15px);
+  }
+}
+
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .navbar-links {
@@ -182,7 +228,23 @@ span.word {
   span.word {
     font-size: 24px !important;
   }
+
+  /* Words */
+  .words-wrapper {
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px 10px;
+    display: flex;
+    /* background-color: #ef4b4b; */
+  }
+
+  /* Banner */
+  .bannerImage {
+    margin: 0;
+    margin-top: 1rem;
+  }
 }
+
 .navbar-links.show {
   background-color: #ccc;
 

@@ -36,7 +36,7 @@ ElevationScroll.propTypes = {
 
 export default function ElevateAppBar(props) {
   return (
-    <Box bgcolor={"red"}>
+    <Box bgcolor={"red"} height={{ xs: "62px", md: "65px" }}>
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar

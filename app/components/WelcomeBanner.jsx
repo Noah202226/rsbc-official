@@ -56,56 +56,62 @@ const WelcomeBanner = ({ selectedAgent }) => {
       // }}
     >
       <Grid container>
-        <Grid item xs={12} md={6} sx={{ height: { xs: "100%", md: "90vh" } }}>
-          <Stack
-            alignItems={"start"}
-            justifyContent={"space-evenly"}
-            height={"100%"}
-            padding={2}
+        <Grid
+          item
+          container
+          xs={12}
+          md={6}
+          sx={{ height: { xs: "100%", md: "90vh" } }}
+        >
+          <Grid
+            item
+            md={12}
+            order={{ xs: 2, md: 1 }}
+            height={{ xs: "5%", md: "35%" }}
           >
-            <Stack mt={2}>
-              <Typography
-                mt={2}
-                variant="h2"
-                color={"#004B4B"}
-                // textAlign={"center"}
-                fontFamily={"serif"}
-                // sx={{ textShadow: "2px 0 3px indigo" }}
-                fontSize={{ xs: 40, md: 60 }}
-              >
-                Loan for your
-              </Typography>
-
-              <Box className="words-wrapper">
-                <div className="words">
-                  <span className="word">Business needs</span>
-                  <span className="word">Personal loan</span>
-                  <span className="word">Improving House</span>
-                  <span className="word">Cash flow</span>
-                  <span className="word">Business expansion</span>
-                </div>
-              </Box>
-            </Stack>
-
             <Stack
-              flexDirection={"column"}
-              alignItems={"flex-start"}
-              justifyContent={"flex-end"}
+              alignItems={"center"}
+              justifyContent={"space-evenly"}
+              height={{ xs: "20%", md: "100%" }}
+              padding={2}
             >
-              <Typography variant="h5" textAlign={"start"} color={"#ef4b4b"}>
-                Get cash in a flash!
-              </Typography>
+              <Stack mt={{ xs: 1, md: 10 }}>
+                <Typography
+                  variant="h2"
+                  color={{ md: "black", xs: "#004B4B" }}
+                  textAlign={"start"}
+                  fontFamily={"serif"}
+                  // sx={{ textShadow: "2px 0 3px indigo" }}
+                  fontSize={{ xs: 40, md: 55 }}
+                >
+                  Loan for your
+                </Typography>
 
-              <Typography
-                variant="h4"
-                textAlign={{ xs: "center", md: "start" }}
-                sx={{ textDecoration: "underline" }}
-                fontSize={{ xs: 21, md: 28 }}
-              >
-                RSBC Bulacan Primes Marketing Consulting
-              </Typography>
+                <Box className="words-wrapper">
+                  <div className="words">
+                    <span className="word">Business Investment</span>
+                    <span className="word">Personal Investment</span>
+                    <span className="word">House Construction</span>
+                    <span className="word">Refinancing</span>
+                    <span className="word">Working Capital</span>
+                  </div>
+                </Box>
+              </Stack>
             </Stack>
-          </Stack>
+          </Grid>
+
+          <Grid item md={12} order={{ xs: 1, md: 2 }}>
+            <Image
+              className="bannerImage"
+              // src={"/handsome-man.jpg"}
+              src={"/young-couple-holding.jpg"}
+              // src={"/online-microcredit-loans.jpg"}
+              // src={"/crop.jpg"}
+              alt="joyful-woman"
+              width={200}
+              height={200}
+            />
+          </Grid>
         </Grid>
 
         <Grid
@@ -119,14 +125,46 @@ const WelcomeBanner = ({ selectedAgent }) => {
             justifyContent: "space-evenly",
           }}
         >
+          <Stack
+            flexDirection={"column"}
+            alignItems={{ xs: "flex-start", md: "flex-end" }}
+            justifyContent={"flex-end"}
+            mt={{ xs: 2, md: 0 }}
+            className="bounceContainer"
+          >
+            <Typography
+              className="bouncingElement"
+              variant="body2"
+              // fontFamily={"serif"}
+              textTransform={"uppercase"}
+              textAlign={"flex-end"}
+              color={"white"}
+              sx={{ background: "red", padding: ".5rem", borderRadius: "1rem" }}
+            >
+              Get cash in a flash!
+            </Typography>
+
+            <Typography
+              variant="h4"
+              mt={{ xs: 2, md: 0 }}
+              textAlign={{ xs: "center", md: "end" }}
+              sx={{ textDecoration: "underline" }}
+              fontSize={{ xs: 16, md: 28 }}
+            >
+              RSBC Bulacan Primes Marketing Consulting
+            </Typography>
+          </Stack>
+
           <Card
             elevation={3}
             sx={{
               zIndex: 999,
-              padding: 1,
-              background: "#ef4b4b",
+              padding: 2,
+              marginY: { xs: 2, md: 0 },
+              // background: "#ef4b4b",
+              background: "red",
               color: "white",
-              textShadow: ".5px 1px 1px black",
+              // textShadow: ".5px 1px 1px black",
             }}
           >
             <Typography
@@ -134,16 +172,18 @@ const WelcomeBanner = ({ selectedAgent }) => {
               textAlign={"center"}
               justifyContent={"center"}
               justifySelf={"center"}
+              fontFamily={"serif"}
             >
-              We offer Bank Cash Loan with No Collateral and No Co-maker for as
-              low as 1.39% up to 1.99% per month.
+              - We offer Bank Cash Loan with No Collateral and No Co-maker for
+              as low as 1.39% up to 1.99% per month.
             </Typography>
             <br />
-            <Typography variant="body">
-              Loanable amount from 20K up to 2M- Loan Term from 12 mos,18
+            <Typography variant="body" fontFamily={"serif"}>
+              - Loanable amount from 20K up to 2M- Loan Term from 12 mos,18
               mos,24mos up to 36mos to pay.
             </Typography>
           </Card>
+
           <Paper sx={{ padding: 1, width: "100%", opacity: 0.9 }} elevation={5}>
             <form
               ref={form}
@@ -185,9 +225,11 @@ const WelcomeBanner = ({ selectedAgent }) => {
                     id="demo-simple-select"
                     name="desired_amount"
                   >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value={"100,000"}>100,000</MenuItem>
+                    <MenuItem value={"200,000"}>200,000</MenuItem>
+                    <MenuItem value={"500,000"}>500,000</MenuItem>
+                    <MenuItem value={"1,000,000"}>1,000,000</MenuItem>
+                    <MenuItem value={"2,000,000"}>2,000,000</MenuItem>
                   </Select>
                 </FormControl>
 
@@ -204,9 +246,10 @@ const WelcomeBanner = ({ selectedAgent }) => {
                     id="demo-simple-select"
                     name="loan_duration"
                   >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value={6}>6 Months</MenuItem>
+                    <MenuItem value={12}>12 Months</MenuItem>
+                    <MenuItem value={24}>24 Months</MenuItem>
+                    <MenuItem value={36}>36 Months</MenuItem>
                   </Select>
                 </FormControl>
               </Stack>
@@ -220,9 +263,9 @@ const WelcomeBanner = ({ selectedAgent }) => {
               />
 
               <TextField
-                type="hidden"
+                // type="hidden"
                 name="user_referral"
-                disabled
+                // disabled
                 value={selectedAgent}
                 required
               />
