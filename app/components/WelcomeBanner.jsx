@@ -63,6 +63,7 @@ const WelcomeBanner = ({ selectedAgent }) => {
           xs={12}
           md={6}
           sx={{ height: { xs: "100%", md: "90vh" } }}
+          className="card"
         >
           <Grid
             item
@@ -125,12 +126,13 @@ const WelcomeBanner = ({ selectedAgent }) => {
             alignItems: "center",
             justifyContent: "space-evenly",
           }}
+          className="card"
         >
           <Stack
             flexDirection={"column"}
             alignItems={{ xs: "flex-start", md: "flex-end" }}
             justifyContent={"flex-end"}
-            className="bounceContainer"
+            className="bounceContainer "
           >
             <Typography
               variant="h3"

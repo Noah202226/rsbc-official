@@ -5,6 +5,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import CustomizedAccordions from "./CustomizeAccordions";
+import CustomizedAccordionsForDoctors from "./CustomizeAccordionsForDoctors";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -43,16 +44,28 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: "100%" }} id="loan-types">
+    <Box
+      sx={{ width: "100%" }}
+      mt={{ xs: 0, md: 5 }}
+      id="loan-types"
+      className="card"
+    >
       <Typography
         variant="h2"
         fontSize={{ xs: 26, md: 46 }}
         my={{ xs: 2, md: 1 }}
-        color={"red"}
+        color={"white"}
+        textAlign={"center"}
+        sx={{
+          background:
+            "linear-gradient(-90deg, rgba(240,63,70,1) 1%, rgba(255,0,0,1) 100%)",
+          width: { xs: "100%", md: "30%" },
+        }}
+        borderRadius={2}
       >
-        Loan Types
+        LOAN TYPES
       </Typography>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }} className="card">
         <Tabs
           value={value}
           onChange={handleChange}
@@ -61,22 +74,33 @@ export default function BasicTabs() {
           <Tab
             label="Salary Loan"
             {...a11yProps(0)}
-            sx={{ fontSize: { xs: 12, md: 26 } }}
+            sx={{ fontSize: { xs: 12, md: 26 }, textTransform: "capitalize" }}
           />
           <Tab
-            label="Seafarer Loans"
+            label="Doctors Loan"
             {...a11yProps(1)}
-            sx={{ fontSize: { xs: 12, md: 26 } }}
+            sx={{ fontSize: { xs: 12, md: 26 }, textTransform: "capitalize" }}
           />
           {/* <Tab label="Item Three" {...a11yProps(2)} /> */}
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        Data for Salary Load will be upload as soon as possible.
+        {/* Data for Salary Load will be upload as soon as possible. */}
         <CustomizedAccordions />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Data for Seafarer Loans will be upload as soon as possible.
+        <CustomizedAccordionsForDoctors />
+        <Typography
+          variant="body"
+          color={"orangered"}
+          fontStyle={"italic"}
+          textAlign={"end"}
+          sx={{ textAlign: "right" }}
+          my={2}
+        >
+          Notes* for doctors loan, we don't have a 12 month term to pay, you
+          could choose either 18 months or 1 year and a half instead.
+        </Typography>
       </CustomTabPanel>
       {/* <CustomTabPanel value={value} index={2}>
         Item Three

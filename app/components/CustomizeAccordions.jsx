@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 
 const Accordion = styled((props) => (
   <MuiAccordion
+    className="card"
     disableGutters
     elevation={0}
     square
@@ -57,20 +58,12 @@ export default function CustomizedAccordions() {
 
   return (
     <div>
-      <Typography
-        variant="h3"
-        fontSize={{ xs: 26, md: 40 }}
-        my={{ xs: 2, md: 1 }}
-        color={"red"}
-      >
-        Loan Requirements
-      </Typography>
       <Accordion
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography variant="h5" fontSize={{ xs: 18, md: 40 }}>
+          <Typography variant="h5" fontSize={{ xs: 18, md: 28 }}>
             For Employed Applications
           </Typography>
         </AccordionSummary>
@@ -88,7 +81,7 @@ export default function CustomizedAccordions() {
           <ul style={{ marginTop: 10 }}>
             <li>
               <Typography>
-                1.    Back to back copy of actual Company ID &amp; valid Govt id
+                1.   Back to back copy of actual Company ID &amp; valid Govt id
                 with 3 specimen signatures{" "}
               </Typography>
             </li>
@@ -115,7 +108,7 @@ export default function CustomizedAccordions() {
         onChange={handleChange("panel2")}
       >
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography variant="h5" fontSize={{ xs: 18, md: 40 }}>
+          <Typography variant="h5" fontSize={{ xs: 18, md: 28 }}>
             For Self - Employed Applications
           </Typography>
         </AccordionSummary>

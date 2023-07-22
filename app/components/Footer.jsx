@@ -9,7 +9,16 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <Box id="footer" sx={{ background: "#004B4B", color: "white", padding: 2 }}>
+    <Box
+      id="footer"
+      sx={{
+        background:
+          "linear-gradient(0deg, rgba(255,63,70,1) -50%, rgba(255,0,0,1) 75%)",
+        color: "white",
+        padding: 2,
+      }}
+      className="card"
+    >
       <Grid container>
         <Grid item xs={12} md={4} mt={{ xs: 2, md: 0 }}>
           <Typography variant="h4">RSBC</Typography>
@@ -37,6 +46,13 @@ const Footer = () => {
                 flexDirection={"row"}
                 alignItems={"center"}
                 justifyContent={"start"}
+                sx={{
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, rgba(212,6,14,1) 0%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
+                    color: "darkgoldenrod",
+                  },
+                }}
               >
                 <Facebook />
                 <Typography variant="body" ml={1} fontSize={{ xs: 12, md: 16 }}>

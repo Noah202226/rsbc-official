@@ -15,7 +15,7 @@ import SectionImage from "../../public/business.jpg";
 
 const Section = () => {
   return (
-    <Box mt={{ xs: 0, md: 20 }} id="why">
+    <Box mt={{ xs: 0, md: 20 }} id="why" className="card">
       <Typography
         variant="h2"
         textAlign={"center"}
@@ -36,7 +36,7 @@ const Section = () => {
           md={6}
           p={5}
         >
-          <Grid item container xs={12} md={12}>
+          <Grid item container xs={12} md={12} className="card">
             <Grid
               item
               display={"flex"}
@@ -80,7 +80,7 @@ const Section = () => {
               my={{ xs: 2, md: 0 }}
             >
               <Image
-                src={"/car-loan-3.svg"}
+                src={"/low-price.png"}
                 alt="svg"
                 height={100}
                 width={100}
@@ -98,7 +98,7 @@ const Section = () => {
               my={{ xs: 2, md: 0 }}
             >
               <Image
-                src={"/car-loan-3.svg"}
+                src={"/checklist.png"}
                 alt="svg"
                 height={100}
                 width={100}
@@ -108,14 +108,31 @@ const Section = () => {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"center"}
+          justifyContent={"space-around"}
+          className="card"
+        >
           <Image
             alt="section-image"
             className="section-svg"
             src={SectionImage}
-            width={500}
-            height={500}
+            width={200}
+            height={200}
           />
+          <Typography
+            variant="h3"
+            textAlign={{ xs: "center", md: "center" }}
+            sx={{ textDecoration: "underline" }}
+            fontSize={{ xs: 26, md: 30 }}
+          >
+            Excellent Client Service
+          </Typography>
         </Grid>
       </Grid>
     </Box>

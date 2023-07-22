@@ -7,11 +7,32 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   color: black;
   background: white;
+}
+/* Customize Scrollbar */
+body::-webkit-scrollbar {
+  width: 5px;
+  overflow-y: auto;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #e05a5a;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #d40000;
 }
 
 ul {
@@ -218,6 +239,18 @@ span.word {
   60% {
     transform: translateY(-1px);
   }
+}
+
+/* Card Animation */
+
+.card {
+  transform: translateX(5px);
+  opacity: 0;
+  transition: 1000ms;
+}
+.card.show {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 /* Media query for mobile devices */

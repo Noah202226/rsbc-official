@@ -27,6 +27,25 @@ export default function Home() {
         setAgentsList((prev) => [...prev, { data: doc.data(), id: doc.id }]);
       });
     });
+
+    // Intersection Observation
+    const cards = document.querySelectorAll(".card");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("show", entry.isIntersecting);
+          // if (entry.isIntersecting) observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    cards.forEach((card) => {
+      console.log(card);
+      observer.observe(card);
+    });
   }, []);
 
   const isInitialMount = useRef(true);
