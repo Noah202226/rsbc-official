@@ -57,18 +57,18 @@ const Header = () => {
             <Typography
               variant="h6"
               fontFamily={"serif"}
-              onClick={() => smoothScrollTo("footer")}
+              onClick={() => smoothScrollTo("why")}
             >
-              Services
+              Why Choose us
             </Typography>
           </li>
           <li onClick={showMenu ? toggleMenu : () => {}}>
             <Typography
               variant="h6"
               fontFamily={"serif"}
-              onClick={() => smoothScrollTo("footer")}
+              onClick={() => smoothScrollTo("loan-types")}
             >
-              About
+              Loan Types
             </Typography>
           </li>
           <li onClick={showMenu ? toggleMenu : () => {}}>

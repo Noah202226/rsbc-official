@@ -4,6 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import CustomizedAccordions from "./CustomizeAccordions";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -16,11 +17,7 @@ function CustomTabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 }
@@ -46,10 +43,10 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%" }} id="loan-types">
       <Typography
-        variant="h3"
-        fontSize={{ xs: 26, md: 40 }}
+        variant="h2"
+        fontSize={{ xs: 26, md: 46 }}
         my={{ xs: 2, md: 1 }}
         color={"red"}
       >
@@ -61,13 +58,22 @@ export default function BasicTabs() {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Salary Loan" {...a11yProps(0)} />
-          <Tab label="Seafarer Loans" {...a11yProps(1)} />
+          <Tab
+            label="Salary Loan"
+            {...a11yProps(0)}
+            sx={{ fontSize: { xs: 12, md: 26 } }}
+          />
+          <Tab
+            label="Seafarer Loans"
+            {...a11yProps(1)}
+            sx={{ fontSize: { xs: 12, md: 26 } }}
+          />
           {/* <Tab label="Item Three" {...a11yProps(2)} /> */}
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
         Data for Salary Load will be upload as soon as possible.
+        <CustomizedAccordions />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Data for Seafarer Loans will be upload as soon as possible.

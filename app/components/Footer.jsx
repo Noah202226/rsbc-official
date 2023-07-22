@@ -15,11 +15,11 @@ const Footer = () => {
           <Typography variant="h4">RSBC</Typography>
 
           <Stack>
-            <Typography variant="body" fontSize={{ xs: 12, md: 21 }}>
-              rsbc.official@gmail.com
+            <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
+              rsbcprimesmarketing@gmail.com
             </Typography>
 
-            <Typography variant="body" fontSize={{ xs: 12, md: 21 }}>
+            <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
               Makapilapil, San Ildefonso, Philippines
             </Typography>
           </Stack>
@@ -39,40 +39,8 @@ const Footer = () => {
                 justifyContent={"start"}
               >
                 <Facebook />
-                <Typography variant="body" ml={1} fontSize={{ xs: 12, md: 18 }}>
+                <Typography variant="body" ml={1} fontSize={{ xs: 12, md: 16 }}>
                   RSBC Bulacan Primes Marketing Consulting
-                </Typography>
-              </Stack>
-            </Link>
-
-            <Link
-              href={"https://www.facebook.com/profile.php?id=100092522162147"}
-              target="_blank"
-            >
-              <Stack
-                flexDirection={"row"}
-                alignItems={"center"}
-                justifyContent={"start"}
-              >
-                <Youtube />
-                <Typography variant="body" ml={1} fontSize={{ xs: 12, md: 18 }}>
-                  RSBC Primes Marketing Consulting
-                </Typography>
-              </Stack>
-            </Link>
-
-            <Link
-              href={"https://www.facebook.com/profile.php?id=100092522162147"}
-              target="_blank"
-            >
-              <Stack
-                flexDirection={"row"}
-                alignItems={"center"}
-                justifyContent={"start"}
-              >
-                <Instagram />
-                <Typography variant="body" ml={1} fontSize={{ xs: 12, md: 18 }}>
-                  @ RSBC Bulacan Primes
                 </Typography>
               </Stack>
             </Link>
@@ -83,23 +51,24 @@ const Footer = () => {
           <Typography variant="h4">Business Hours</Typography>
 
           <Stack>
-            <Typography fontSize={{ xs: 12, md: 18 }}>
-              Monday - Friday: 9:00 am - 5:00 pm
+            <Typography fontSize={{ xs: 12, md: 16 }}>
+              OFFICE DAYS: Monday - Friday: 9:00 am - 5:00 pm
             </Typography>
 
-            <Typography fontSize={{ xs: 12, md: 18 }}>
-              Saturday: 10:00 am - 6:00 pm
-            </Typography>
-
-            <Typography variant="h6" fontSize={{ xs: 12, md: 18 }}>
-              Please contact us for any inquiry.
+            <Typography fontSize={{ xs: 12, md: 16 }}>
+              FOR INQUIRIES : Saturday: 10:00 am - 6:00 pm
             </Typography>
           </Stack>
         </Grid>
       </Grid>
-      <Typography variant="body2" textAlign={"center"} mt={2}>
-        Copyright @2023 All rights reserved | This website is made by Noah -
-        Contact me @ noaligpitan26@gmail.com
+      <Typography
+        variant="body2"
+        textAlign={"center"}
+        mt={2}
+        fontSize={{ xs: 12, md: 14 }}
+      >
+        Copyright @2023 All rights reserved <br /> This website is made by Noah
+        @ noaligpitan26@gmail.com
       </Typography>
     </Box>
   );

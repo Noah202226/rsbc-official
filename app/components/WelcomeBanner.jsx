@@ -15,11 +15,12 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import emailjs from "@emailjs/browser";
 
 const WelcomeBanner = ({ selectedAgent }) => {
+  const [monthlyPay, setMonthlyPay] = useState();
   const form = useRef();
 
   const sendData = async (e) => {
@@ -129,60 +130,18 @@ const WelcomeBanner = ({ selectedAgent }) => {
             flexDirection={"column"}
             alignItems={{ xs: "flex-start", md: "flex-end" }}
             justifyContent={"flex-end"}
-            mt={{ xs: 2, md: 0 }}
             className="bounceContainer"
           >
             <Typography
-              className="bouncingElement"
-              variant="body2"
-              // fontFamily={"serif"}
-              textTransform={"uppercase"}
-              textAlign={"flex-end"}
-              color={"white"}
-              sx={{ background: "red", padding: ".5rem", borderRadius: "1rem" }}
-            >
-              Get cash in a flash!
-            </Typography>
-
-            <Typography
-              variant="h4"
-              mt={{ xs: 2, md: 0 }}
-              textAlign={{ xs: "center", md: "end" }}
+              variant="h3"
+              my={{ xs: 2, md: 0 }}
+              textAlign={{ xs: "center", md: "center" }}
               sx={{ textDecoration: "underline" }}
-              fontSize={{ xs: 16, md: 28 }}
+              fontSize={{ xs: 16, md: 30 }}
             >
               RSBC Bulacan Primes Marketing Consulting
             </Typography>
           </Stack>
-
-          <Card
-            elevation={3}
-            sx={{
-              zIndex: 999,
-              padding: 2,
-              marginY: { xs: 2, md: 0 },
-              // background: "#ef4b4b",
-              background: "red",
-              color: "white",
-              // textShadow: ".5px 1px 1px black",
-            }}
-          >
-            <Typography
-              variant="body"
-              textAlign={"center"}
-              justifyContent={"center"}
-              justifySelf={"center"}
-              fontFamily={"serif"}
-            >
-              - We offer Bank Cash Loan with No Collateral and No Co-maker for
-              as low as 1.39% up to 1.99% per month.
-            </Typography>
-            <br />
-            <Typography variant="body" fontFamily={"serif"}>
-              - Loanable amount from 20K up to 2M- Loan Term from 12 mos,18
-              mos,24mos up to 36mos to pay.
-            </Typography>
-          </Card>
 
           <Paper sx={{ padding: 1, width: "100%", opacity: 0.9 }} elevation={5}>
             <form
@@ -194,7 +153,7 @@ const WelcomeBanner = ({ selectedAgent }) => {
               }}
             >
               <Typography mb={1} variant="body" textAlign={"start"}>
-                Fill out the form.
+                Loan Calculator
               </Typography>
               <Stack flexDirection={{ xs: "column", md: "row" }}>
                 <TextField
@@ -210,8 +169,8 @@ const WelcomeBanner = ({ selectedAgent }) => {
                   fullWidth
                   type="email"
                   name="user_email"
-                  placeholder="Your email"
-                  required
+                  placeholder="Your email (optional)"
+                  // required
                 />
               </Stack>
 
@@ -225,11 +184,30 @@ const WelcomeBanner = ({ selectedAgent }) => {
                     id="demo-simple-select"
                     name="desired_amount"
                   >
-                    <MenuItem value={"100,000"}>100,000</MenuItem>
-                    <MenuItem value={"200,000"}>200,000</MenuItem>
-                    <MenuItem value={"500,000"}>500,000</MenuItem>
-                    <MenuItem value={"1,000,000"}>1,000,000</MenuItem>
                     <MenuItem value={"2,000,000"}>2,000,000</MenuItem>
+                    <MenuItem value={"1,000,000"}>1,000,000</MenuItem>
+                    <MenuItem value={"500,000"}>500,000</MenuItem>
+                    <MenuItem value={"200,000"}>200,000</MenuItem>
+                    <MenuItem value={"100,000"}>100,000</MenuItem>
+                    <MenuItem value={"50,000"}>50,000</MenuItem>
+                    <MenuItem value={"20,000"}>20,000</MenuItem>
+                  </Select>
+                </FormControl>
+
+                <FormControl
+                  fullWidth
+                  sx={{ ml: { xs: 0, md: 1 }, mb: { xs: 1, md: 0 } }}
+                  required
+                >
+                  <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    name="status"
+                  >
+                    <MenuItem value={0.0149}>Self-employed (1.49%)</MenuItem>
+                    <MenuItem value={0.0149}>Employed (1.49%) </MenuItem>
+                    <MenuItem value={0.0139}>Doctors (1.39%)</MenuItem>
                   </Select>
                 </FormControl>
 
@@ -257,13 +235,13 @@ const WelcomeBanner = ({ selectedAgent }) => {
               <TextField
                 type="text"
                 name="message"
-                placeholder="Some message"
-                multiline
+                helperText="Monthly Pay"
+                value={monthlyPay}
                 sx={{ mb: 1 }}
               />
 
               <TextField
-                // type="hidden"
+                type="hidden"
                 name="user_referral"
                 // disabled
                 value={selectedAgent}
@@ -271,7 +249,31 @@ const WelcomeBanner = ({ selectedAgent }) => {
               />
 
               <Button
-                type="submit"
+                // type="submit"
+                onClick={() => {
+                  console.log("Computing...");
+                  const selectedStatus = form.current.status.value;
+                  const selectedLoanDuration = form.current.loan_duration.value;
+                  const selectedDesiredAmount =
+                    form.current.desired_amount.value;
+                  console.log(
+                    selectedDesiredAmount,
+                    selectedLoanDuration,
+                    selectedStatus
+                  );
+                  console.log(Number(selectedDesiredAmount.replace(/,/g, "")));
+
+                  const answer1 =
+                    Number(selectedDesiredAmount.replace(/,/g, "")) *
+                    parseFloat(selectedStatus);
+                  const answer2 =
+                    Number(selectedDesiredAmount.replace(/,/g, "")) /
+                    parseFloat(selectedLoanDuration);
+
+                  const perMonth = answer1 + answer2;
+
+                  setMonthlyPay(perMonth.toFixed(6));
+                }}
                 variant="contained"
                 color="success"
                 sx={{
@@ -282,9 +284,50 @@ const WelcomeBanner = ({ selectedAgent }) => {
                     background:
                       "linear-gradient(90deg, rgba(212,6,14,1) 0%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
                   },
+                  transition: "all 5s ease-in",
                 }}
               >
-                Get Cash Now
+                COMPUTE
+              </Button>
+
+              {/* <Typography
+                className="bouncingElement"
+                variant="h4"
+                // fontFamily={"serif"}
+                textTransform={"uppercase"}
+                textAlign={"center"}
+                color={"white"}
+                sx={{
+                  background: "red",
+                  padding: ".5rem",
+                  borderRadius: "1rem",
+                  width: "100%",
+                  border: "3px solid black",
+                }}
+              >
+                APPLY NOW
+              </Typography> */}
+
+              <Button
+                className="bouncingElement"
+                type="submit"
+                onClick={() => console.log("computing...")}
+                variant="contained"
+                color="success"
+                sx={{
+                  // background: "rgb(240,63,70)",
+                  background:
+                    "linear-gradient(0deg, rgba(255,63,70,1) -50%, rgba(255,0,0,1) 100%)",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, rgba(212,6,14,1) 0%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
+                  },
+                  padding: ".5rem",
+                  fontSize: "2rem",
+                  my: 2,
+                }}
+              >
+                APPLY NOW
               </Button>
             </form>
           </Paper>

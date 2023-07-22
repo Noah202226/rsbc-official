@@ -15,12 +15,13 @@ import SectionImage from "../../public/business.jpg";
 
 const Section = () => {
   return (
-    <Box mt={{ xs: 0, md: 20 }}>
+    <Box mt={{ xs: 0, md: 20 }} id="why">
       <Typography
         variant="h2"
         textAlign={"center"}
         fontSize={{ xs: 36, md: 56 }}
         color={"red"}
+        mt={{ xs: 10, md: 0 }}
       >
         Why Choose Us?
       </Typography>
@@ -35,50 +36,75 @@ const Section = () => {
           md={6}
           p={5}
         >
-          <Grid
-            item
-            display={"flex"}
-            flexDirection={"column"}
-            alignItems={"center"}
-            xs={12}
-            md={4}
-          >
-            <Image
-              src={"/loan-interest-time.svg"}
-              alt="svg"
-              height={100}
-              width={100}
-            />
-            <Typography variant="body">No Co Maker</Typography>
+          <Grid item container xs={12} md={12}>
+            <Grid
+              item
+              display={"flex"}
+              flexDirection={"column"}
+              alignItems={"center"}
+              xs={12}
+              md={6}
+              my={{ xs: 2, md: 0 }}
+            >
+              <Image src={"/no-user.png"} alt="svg" height={100} width={100} />
+              <Typography variant="body">No Co-Maker Required</Typography>
+            </Grid>
+
+            <Grid
+              item
+              display={"flex"}
+              flexDirection={"column"}
+              alignItems={"center"}
+              xs={12}
+              md={6}
+              my={{ xs: 2, md: 0 }}
+            >
+              <Image
+                src={"/no-camera.png"}
+                alt="svg"
+                height={100}
+                width={100}
+              />
+              <Typography variant="body">No Collateral required</Typography>
+            </Grid>
           </Grid>
 
-          <Grid
-            item
-            display={"flex"}
-            flexDirection={"column"}
-            alignItems={"center"}
-            xs={12}
-            md={4}
-          >
-            <Image
-              src={"/mortgage-loan-mortgage.svg"}
-              alt="svg"
-              height={100}
-              width={100}
-            />
-            <Typography variant="body">Collateral-free loan</Typography>
-          </Grid>
+          <Grid item container xs={12} md={12}>
+            <Grid
+              item
+              display={"flex"}
+              flexDirection={"column"}
+              alignItems={"center"}
+              xs={12}
+              md={6}
+              my={{ xs: 2, md: 0 }}
+            >
+              <Image
+                src={"/car-loan-3.svg"}
+                alt="svg"
+                height={100}
+                width={100}
+              />
+              <Typography variant="body">Low Interest Rate</Typography>
+            </Grid>
 
-          <Grid
-            item
-            display={"flex"}
-            flexDirection={"column"}
-            alignItems={"center"}
-            xs={12}
-            md={4}
-          >
-            <Image src={"/car-loan-3.svg"} alt="svg" height={100} width={100} />
-            <Typography variant="body">Auto Loan</Typography>
+            <Grid
+              item
+              display={"flex"}
+              flexDirection={"column"}
+              alignItems={"center"}
+              xs={12}
+              md={6}
+              my={{ xs: 2, md: 0 }}
+            >
+              <Image
+                src={"/car-loan-3.svg"}
+                alt="svg"
+                height={100}
+                width={100}
+              />
+              <Typography variant="body">Minimal Requirements</Typography>
+            </Grid>
           </Grid>
         </Grid>
 

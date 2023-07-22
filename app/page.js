@@ -6,8 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import { db } from "./utils/firebase";
 import { collection, doc, getDoc, onSnapshot } from "firebase/firestore";
 import { useSearchParams } from "next/navigation";
-import CustomizedAccordions from "./components/CustomizeAccordions";
-import VerticalTabs from "./components/VerticalTabs";
 import ColorTabs from "./components/ColoredTabs";
 
 export default function Home() {
@@ -68,7 +66,7 @@ export default function Home() {
       <WelcomeBanner selectedAgent={selectedAgent} />
       <Section />
       <ColorTabs />
-      <CustomizedAccordions />
+
       <ImagesContent />
     </>
   );
