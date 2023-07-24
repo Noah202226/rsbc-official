@@ -62,6 +62,17 @@ const Header = () => {
               Why Choose us
             </Typography>
           </li>
+
+          <li onClick={showMenu ? toggleMenu : () => {}}>
+            <Typography
+              variant="h6"
+              fontFamily={"serif"}
+              onClick={() => smoothScrollTo("why")}
+            >
+              Multi Purpose Bank
+            </Typography>
+          </li>
+
           <li onClick={showMenu ? toggleMenu : () => {}}>
             <Typography
               variant="h6"

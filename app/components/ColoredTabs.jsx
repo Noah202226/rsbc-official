@@ -81,11 +81,14 @@ export default function BasicTabs() {
             {...a11yProps(1)}
             sx={{ fontSize: { xs: 12, md: 26 }, textTransform: "capitalize" }}
           />
-          {/* <Tab label="Item Three" {...a11yProps(2)} /> */}
+          <Tab
+            label="Bankers Loan"
+            {...a11yProps(2)}
+            sx={{ fontSize: { xs: 12, md: 26 }, textTransform: "capitalize" }}
+          />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        {/* Data for Salary Load will be upload as soon as possible. */}
         <CustomizedAccordions />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
@@ -102,9 +105,9 @@ export default function BasicTabs() {
           could choose either 18 months or 1 year and a half instead.
         </Typography>
       </CustomTabPanel>
-      {/* <CustomTabPanel value={value} index={2}>
+      <CustomTabPanel value={value} index={2}>
         Item Three
-      </CustomTabPanel> */}
+      </CustomTabPanel>
     </Box>
   );
 }

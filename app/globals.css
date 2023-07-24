@@ -27,12 +27,12 @@ body::-webkit-scrollbar-track {
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
-  background: #e05a5a;
+  background: #018b31e1;
 }
 
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
-  background: #d40000;
+  background: #08cf4a;
 }
 
 ul {

@@ -9,6 +9,7 @@ import {
   MenuItem,
   Paper,
   Select,
+  Skeleton,
   Stack,
   TextField,
   Typography,
@@ -18,6 +19,8 @@ import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
 
 import emailjs from "@emailjs/browser";
+
+import BannerImg from "../../public/young-couple-holding.jpg";
 
 const WelcomeBanner = ({ selectedAgent }) => {
   const [monthlyPay, setMonthlyPay] = useState();
@@ -103,16 +106,20 @@ const WelcomeBanner = ({ selectedAgent }) => {
           </Grid>
 
           <Grid item md={12} order={{ xs: 1, md: 2 }}>
-            <Image
-              className="bannerImage"
-              // src={"/handsome-man.jpg"}
-              src={"/young-couple-holding.jpg"}
-              // src={"/online-microcredit-loans.jpg"}
-              // src={"/crop.jpg"}
-              alt="joyful-woman"
-              width={200}
-              height={200}
-            />
+            {BannerImg ? (
+              <Image
+                className="bannerImage"
+                // src={"/handsome-man.jpg"}
+                src={BannerImg}
+                // src={"/online-microcredit-loans.jpg"}
+                // src={"/crop.jpg"}
+                alt="joyful-woman"
+                width={200}
+                height={200}
+              />
+            ) : (
+              <Skeleton variant="rectangular" width={200} height={200} />
+            )}
           </Grid>
         </Grid>
 
@@ -281,10 +288,10 @@ const WelcomeBanner = ({ selectedAgent }) => {
                 sx={{
                   // background: "rgb(240,63,70)",
                   background:
-                    "linear-gradient(90deg, rgba(240,63,70,1) 40%, rgba(255,0,0,1) 100%)",
+                    "linear-gradient(-90deg, rgba(0,100,0,1) 100%, rgba(5,200,1) 100%)",
                   "&:hover": {
                     background:
-                      "linear-gradient(90deg, rgba(212,6,14,1) 0%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
+                      "linear-gradient(-90deg, rgba(0,150,0,1) 100%, rgba(5,200,1) 100%)", // Replace with your desired gradient on hover
                   },
                   transition: "all 5s ease-in",
                 }}
