@@ -20,7 +20,7 @@ const Footer = () => {
       className="card"
     >
       <Grid container>
-        <Grid item xs={12} md={4} mt={{ xs: 2, md: 0 }}>
+        <Grid item xs={12} md={5} mt={{ xs: 2, md: 0 }}>
           <Typography variant="h4">RSBC</Typography>
 
           <Stack>
@@ -29,7 +29,15 @@ const Footer = () => {
             </Typography>
 
             <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
-              Makapilapil, San Ildefonso, Philippines
+              # 8747 BA Lepanto Building Paseo De Roxas, Makati City
+              <br />
+              0928 521 2840
+            </Typography>
+            <br />
+            <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
+              Maxi Gas, 2nd Floor, High Way, Makapilapil, San Ildefonso, Bulacan
+              <br />
+              0928 521 2840
             </Typography>
           </Stack>
         </Grid>
@@ -49,8 +57,8 @@ const Footer = () => {
                 sx={{
                   "&:hover": {
                     background:
-                      "linear-gradient(90deg, rgba(212,6,14,1) 0%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
-                    color: "darkgoldenrod",
+                      "linear-gradient(90deg, rgba(2,6,150,1) 0%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
+                    color: "cyan",
                   },
                 }}
               >
@@ -63,28 +71,28 @@ const Footer = () => {
           </Stack>
         </Grid>
 
-        <Grid item xs={12} md={4} mt={{ xs: 2, md: 0 }}>
+        <Grid item xs={12} md={3} mt={{ xs: 2, md: 0 }}>
           <Typography variant="h4">Business Hours</Typography>
 
           <Stack>
             <Typography fontSize={{ xs: 12, md: 16 }}>
-              OFFICE DAYS: Monday - Friday: 9:00 am - 5:00 pm
+              OFFICE DAYS: <br /> Monday - Friday: 9:00 am - 5:00 pm
             </Typography>
 
             <Typography fontSize={{ xs: 12, md: 16 }}>
-              FOR INQUIRIES : Saturday: 10:00 am - 6:00 pm
+              FOR INQUIRIES : <br /> Saturday: 10:00 am - 6:00 pm
             </Typography>
           </Stack>
         </Grid>
       </Grid>
+
       <Typography
         variant="body2"
         textAlign={"center"}
         mt={2}
         fontSize={{ xs: 12, md: 14 }}
       >
-        Copyright @2023 All rights reserved <br /> This website is made by Noah
-        @ noaligpitan26@gmail.com
+        RSBC BULACAN PRIMES MARKETING CONSULTING - 2023 All rights reserved.
       </Typography>
     </Box>
   );
