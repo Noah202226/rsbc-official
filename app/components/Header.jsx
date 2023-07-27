@@ -73,7 +73,7 @@ const Header = () => {
             </Typography>
           </li>
 
-          <li onClick={showMenu ? toggleMenu : () => {}}>
+          {/* <li onClick={showMenu ? toggleMenu : () => {}}>
             <Typography
               variant="h6"
               fontFamily={"serif"}
@@ -81,7 +81,7 @@ const Header = () => {
             >
               Loan Types
             </Typography>
-          </li>
+          </li> */}
           <li onClick={showMenu ? toggleMenu : () => {}}>
             <Typography
               variant="h6"

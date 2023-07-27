@@ -19,7 +19,25 @@ const AgentList = () => {
     });
   }, []);
   return (
-    <Paper>
+    <Paper
+      elevation={5}
+      sx={{
+        height: 300,
+        overflowY: "auto",
+        padding: 1,
+        "&::hover": { cursor: "all-scroll" },
+        "&::-webkit-scrollbar": { width: "5px" },
+        "&::-webkit-scrollbar-thumb": {
+          backgroundColor: "red",
+          borderRadius: "5px",
+        },
+        "&::-webkit-scrollbar-thumb:hover": {
+          backgroundColor: "green",
+          borderRadius: "1px",
+          cursor: "grabbing",
+        },
+      }}
+    >
       {agentsList.length > 0 ? (
         agentsList?.map((agent) => (
           <Card key={agent.id} sx={{ p: 1, mt: 1 }}>
@@ -30,12 +48,13 @@ const AgentList = () => {
             >
               <Stack>
                 <Typography>{`Agent Name: ${agent?.data.name}`}</Typography>
+                <Typography>{`Referral Link: https://rsbc-official.vercel.app/?ref=${agent?.data.name}`}</Typography>
               </Stack>
 
               <Stack flexDirection={"row"}>
-                <Button color="success" onClick={() => console.log(agent.id)}>
+                {/* <Button color="success" onClick={() => console.log(agent.id)}>
                   <Update />
-                </Button>
+                </Button> */}
 
                 <DeleteAgent agentId={agent.id} />
               </Stack>

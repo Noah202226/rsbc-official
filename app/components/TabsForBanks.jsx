@@ -81,22 +81,31 @@ export default function TabsForBanks() {
       id="loan-types"
       className="card"
     >
-      <Typography
-        variant="h2"
-        fontSize={{ xs: 24, md: 46 }}
-        mt={{ xs: 2, md: 1 }}
-        color={"white"}
-        textAlign={"center"}
-        justifyContent={"center"}
+      <Stack
+        flexDirection={"row"}
+        alignItems={"center"}
+        justifyContent={"space-evenly"}
         sx={{
           background:
             "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
-          width: { xs: "100%", md: "60%" },
+          width: { xs: "100%", md: "50%" },
         }}
         borderRadius={2}
       >
-        MULTI PURPOSE BANKS
-      </Typography>
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 24, md: 46 }}
+          mt={{ xs: 2, md: 1 }}
+          color={"white"}
+          textAlign={"center"}
+          justifyContent={"center"}
+        >
+          MULTI PURPOSE BANKS
+        </Typography>
+
+        <Image src={"/bank.png"} alt="banks" width={50} height={50} />
+      </Stack>
+
       <Box sx={{ borderBottom: 1, borderColor: "divider" }} className="card">
         <Tabs
           value={value}
@@ -126,32 +135,35 @@ export default function TabsForBanks() {
       <CustomTabPanel value={value} index={0}>
         <ColoredTabs />
       </CustomTabPanel>
+
       <CustomTabPanel value={value} index={1}>
         <Stack
-          flexDirection={"column"}
-          alignItems={"start"}
+          flexDirection={{ xs: "column", md: "row" }}
+          alignItems={"center"}
           justifyContent={"space-between"}
         >
-          <Image
-            src={"/east-west.jpg"}
-            alt="east-west-logo"
-            width={100}
-            height={100}
-          />
           <Typography
+            order={{ xs: 1, md: 0 }}
+            my={{ xs: 2, md: 1 }}
             variant="h2"
             fontSize={{ xs: 18, md: 28 }}
             color={"white"}
             textAlign={"center"}
             sx={{
-              background:
-                "linear-gradient(-90deg, rgba(240,63,70,1) 1%, rgba(255,0,0,1) 100%)",
+              background: "rgba(178,0,111,1)",
               width: { xs: "100%", md: "30%" },
             }}
             borderRadius={2}
           >
             Application Requirements
           </Typography>
+
+          <Image
+            src={"/east-west.jpg"}
+            alt="east-west-logo"
+            width={100}
+            height={100}
+          />
         </Stack>
 
         <Typography>
@@ -175,13 +187,13 @@ export default function TabsForBanks() {
           color={"white"}
           textAlign={"center"}
           sx={{
-            background:
-              "linear-gradient(-90deg, rgba(240,63,70,1) 1%, rgba(255,0,0,1) 100%)",
+            background: "rgba(178,0,111,1)",
             width: { xs: "100%", md: "30%" },
           }}
           borderRadius={2}
+          my={{ xs: 2, md: 3 }}
         >
-          DOCUMENTARY REQUIREMENTS
+          Documentary Requirements
         </Typography>
 
         <Typography>
@@ -207,11 +219,11 @@ export default function TabsForBanks() {
           color={"white"}
           textAlign={"center"}
           sx={{
-            background:
-              "linear-gradient(-90deg, rgba(240,63,70,1) 1%, rgba(255,0,0,1) 100%)",
-            width: { xs: "100%", md: "30%" },
+            background: "rgba(178,0,111,1)",
+            width: { xs: "100%", md: "45%" },
           }}
           borderRadius={2}
+          my={{ xs: 2, md: 3 }}
         >
           If employed, submit ANY of the following:
         </Typography>
@@ -236,11 +248,11 @@ export default function TabsForBanks() {
           color={"white"}
           textAlign={"center"}
           sx={{
-            background:
-              "linear-gradient(-90deg, rgba(240,63,70,1) 1%, rgba(255,0,0,1) 100%)",
-            width: { xs: "100%", md: "30%" },
+            background: "rgba(178,0,111,1)",
+            width: { xs: "100%", md: "45%" },
           }}
           borderRadius={2}
+          my={{ xs: 2, md: 3 }}
         >
           If self-employed, submit ALL of the following:
         </Typography>
@@ -434,19 +446,207 @@ export default function TabsForBanks() {
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={2}>
+        <Stack
+          flexDirection={{ xs: "column", md: "row" }}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+        >
+          <Typography
+            order={{ xs: 1, md: 0 }}
+            my={{ xs: 2, md: 1 }}
+            variant="h2"
+            fontSize={{ xs: 18, md: 28 }}
+            color={"white"}
+            textAlign={"center"}
+            sx={{
+              background: "rgba(44,59,85,1)",
+              width: { xs: "100%", md: "30%" },
+            }}
+            borderRadius={2}
+          >
+            Are You Qualified?
+          </Typography>
+          <Image
+            src={"/security-bank.jpg"}
+            alt="security-bank-logo"
+            width={100}
+            height={100}
+          />
+        </Stack>
+
+        <Typography>
+          • Must be a Filipino citizen or Foreign National permanently residing
+          in the Philippines.
+        </Typography>
+        <Typography>
+          • Must be at least 21 years old during application and not more than
+          65 years old upon loan maturity Must have at least one fixed landline
+          number (either home or business) and a mobile number. (Mobile number
+          will not be accepted as a stand-alone contact number)
+        </Typography>
+        <Typography>
+          • Gross (basic) monthly income (GMI) must be at least Phpl5,000 or
+          basic annual income or must not be less than Php180,000
+        </Typography>
+
         <Typography
           variant="h2"
           fontSize={{ xs: 18, md: 28 }}
           color={"white"}
           textAlign={"center"}
           sx={{
-            background:
-              "linear-gradient(-90deg, rgba(240,63,70,1) 1%, rgba(255,0,0,1) 100%)",
+            background: "rgba(44,59,85,1)",
+            width: { xs: "100%", md: "30%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          DOCUMENTARY REQUIREMENTS
+        </Typography>
+
+        <Typography>
+          • At least 21 years old but not more than 65 years old upon loan
+          maturity
+        </Typography>
+        <Typography>• Filipino citizen</Typography>
+        <Typography>• With office or residence landline</Typography>
+        <Typography>
+          • Residence or office is within Bank's service processing area
+        </Typography>
+
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background: "rgba(44,59,85,1)",
+            width: { xs: "100%", md: "30%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          Employed
+        </Typography>
+        <Typography>
+          • Regular and permanent with current employer and with total
+          employment of at least one (1) year.
+        </Typography>
+        <Typography>
+          • Minimun gross monthly income: <br /> -For Metro Manila: Php 15,000
+          -For outside Metro Manila: Php 12,000
+        </Typography>
+
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background: "rgba(44,59,85,1)",
+            width: { xs: "100%", md: "30%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          Self Employed
+        </Typography>
+        <Typography>
+          • With at least two (2) continuous years of profitable operations in
+          the same line of business
+        </Typography>
+        <Typography>
+          • Minimun gross monthly income: <br /> -For Metro Manila: Php 30,000
+          -For outside Metro Manila: Php 25,000
+        </Typography>
+
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background: "rgba(44,59,85,1)",
+            width: { xs: "100%", md: "30%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          REQUIREMENTS
+        </Typography>
+        <Typography>
+          Duly filled - out and signed Loan Application Form
+        </Typography>
+
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background: "rgba(44,59,85,1)",
+            width: { xs: "100%", md: "30%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          Employed
+        </Typography>
+
+        <Typography>
+          • Photocopy of company ID with clear photo and signature
+        </Typography>
+        <Typography>
+          • Photocopy of one (1) valid government-issued photo ID with three (3)
+          specimen signatures
+        </Typography>
+        <Typography>
+          • Income Documents, any of the following:
+          <br />
+          &nbsp;&nbsp;&nbsp; • Latest one (1) month payslip with COE, or
+          &nbsp;&nbsp;&nbsp; • Latest one (1) month payslip with ITR, or
+          &nbsp;&nbsp;&nbsp; • Latest three (3) months payslip
+        </Typography>
+
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background: "rgba(44,59,85,1)",
             width: { xs: "100%", md: "30%" },
           }}
           borderRadius={2}
         >
-          Application Requirements
+          Self-Employed
+        </Typography>
+
+        <Typography>
+          • Photocopy of two (2) valid government-issued IDs with three (3)
+          specimen signatures
+        </Typography>
+        <Typography>
+          • Latest two (2) years Audited Financial Statements
+        </Typography>
+        <Typography>• SEC Registration / DTI Certificate</Typography>
+        <Typography>• Business Permit / Mayor's Permit</Typography>
+        <Typography>• Latest three (3) months bank statements</Typography>
+        <Typography>
+          • List of three (3) suppliers and three (3) customers with telephone
+          numbers
+        </Typography>
+        <Typography>• Latest GSIS (if corporation)</Typography>
+
+        <Typography
+          variant="body"
+          color={"orangered"}
+          fontStyle={"italic"}
+          textAlign={"end"}
+          sx={{ textAlign: "right" }}
+          my={2}
+        >
+          * Additional documents may be required by the bank to process the loan
         </Typography>
       </CustomTabPanel>
     </Box>

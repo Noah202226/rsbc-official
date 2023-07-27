@@ -16,7 +16,7 @@ body {
 }
 /* Customize Scrollbar */
 body::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
   overflow-y: auto;
 }
 
@@ -27,12 +27,12 @@ body::-webkit-scrollbar-track {
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
-  background: #018b31e1;
+  background: #b60000e1;
 }
 
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
-  background: #08cf4a;
+  background: #e23c3c;
 }
 
 ul {

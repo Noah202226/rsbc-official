@@ -21,10 +21,14 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import BannerImg from "../../public/young-couple-holding.jpg";
+import { toast } from "react-toastify";
 
 const WelcomeBanner = ({ selectedAgent }) => {
-  const [monthlyPay, setMonthlyPay] = useState();
   const form = useRef();
+  const [monthlyPay, setMonthlyPay] = useState();
+  const [desiredAmount, setDesiredAmount] = useState("");
+  const [status, setStatus] = useState("");
+  const [loanDuration, setLoanDuration] = useState("");
 
   const sendData = async (e) => {
     e.preventDefault();
@@ -40,11 +44,22 @@ const WelcomeBanner = ({ selectedAgent }) => {
         (result) => {
           console.log(result.text);
           form.current.reset();
-          alert("Email sent.");
+          // alert("Email sent.");
+          setDesiredAmount("");
+          setStatus("");
+          setLoanDuration();
+          setMonthlyPay();
+          toast.success(
+            "Email sent. You will get response as soon as possible, Thanks!",
+            { containerId: "home-notifications" }
+          );
         },
         (error) => {
           console.log(error.text);
-          alert("Email not sent.", error.text);
+          // alert("Email not sent.", error.text);
+          toast.success(`Email failed to sent. ${error.text}`, {
+            containerId: "home-notifications",
+          });
         }
       );
   };
@@ -192,6 +207,8 @@ const WelcomeBanner = ({ selectedAgent }) => {
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     name="desired_amount"
+                    value={desiredAmount}
+                    onChange={(e) => setDesiredAmount(e.target.value)}
                   >
                     <MenuItem value={"2,000,000"}>2,000,000</MenuItem>
                     <MenuItem value={"1,000,000"}>1,000,000</MenuItem>
@@ -213,6 +230,8 @@ const WelcomeBanner = ({ selectedAgent }) => {
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     name="status"
+                    value={status}
+                    onChange={(e) => setStatus(e.target.value)}
                   >
                     <MenuItem value={0.0149}>Self-employed (1.49%)</MenuItem>
                     <MenuItem value={0.0149}>Employed (1.49%) </MenuItem>
@@ -232,6 +251,8 @@ const WelcomeBanner = ({ selectedAgent }) => {
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     name="loan_duration"
+                    value={loanDuration}
+                    onChange={(e) => setLoanDuration(e.target.value)}
                   >
                     <MenuItem value={6}>6 Months</MenuItem>
                     <MenuItem value={12}>12 Months</MenuItem>

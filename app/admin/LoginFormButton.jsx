@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
 import React from "react";
 import { db } from "../utils/firebase";
+import { toast } from "react-toastify";
 
 const LoginFormButton = ({ formRef, setIsLogged }) => {
   const docRef = collection(db, "admin");
@@ -21,15 +22,19 @@ const LoginFormButton = ({ formRef, setIsLogged }) => {
       .then((data) => {
         if (data.docs.length > 0) {
           console.log("account found ");
+          toast.success("Login successfully.", {
+            containerId: "admin-notifications",
+          });
           setIsLogged(true);
         } else {
           console.log("account not found.");
+          toast.error("Login failed.", { containerId: "admin-notifications" });
         }
       })
       .catch((e) => console.log(e));
   };
   return (
-    <Button variant="contained" type="submit" onClick={checkUser}>
+    <Button fullWidth variant="contained" type="submit" onClick={checkUser}>
       Login
     </Button>
   );

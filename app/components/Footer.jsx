@@ -7,7 +7,13 @@ import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 
-const Footer = () => {
+const Footer = ({
+  footerTitle,
+  footerEmail,
+  footerContact,
+  footerAddress1,
+  footerAddress2,
+}) => {
   return (
     <Box
       id="footer"
@@ -21,9 +27,25 @@ const Footer = () => {
     >
       <Grid container>
         <Grid item xs={12} md={5} mt={{ xs: 2, md: 0 }}>
-          <Typography variant="h4">RSBC</Typography>
+          <Typography variant="h4">{footerTitle}</Typography>
 
           <Stack>
+            <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
+              {footerEmail}
+              <br />
+              {footerContact}
+            </Typography>
+
+            <br />
+            <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
+              {footerAddress1}
+            </Typography>
+            <br />
+            <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
+              {footerAddress2}
+            </Typography>
+          </Stack>
+          {/* <Stack>
             <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
               rsbcprimesmarketing@gmail.com
               <br />
@@ -38,7 +60,7 @@ const Footer = () => {
             <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
               Maxi Gas, 2nd Floor, High Way, Makapilapil, San Ildefonso, Bulacan
             </Typography>
-          </Stack>
+          </Stack> */}
         </Grid>
 
         <Grid item xs={12} md={4} mt={{ xs: 2, md: 0 }}>

@@ -8,6 +8,9 @@ import { collection, doc, getDoc, onSnapshot } from "firebase/firestore";
 import { useSearchParams } from "next/navigation";
 import ColorTabs from "./components/ColoredTabs";
 import TabsForBanks from "./components/TabsForBanks";
+import { Flip, ToastContainer, Zoom, toast } from "react-toastify";
+import Footer from "./components/Footer";
+import ElevateAppBar from "./components/ElevateAppBar";
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -21,11 +24,21 @@ export default function Home() {
   const [agentsList, setAgentsList] = useState([]);
   const agentColRef = collection(db, "agents");
 
+  const [settings, setSettings] = useState([]);
+  const settingsRef = collection(db, "settings");
+
   useEffect(() => {
     onSnapshot(agentColRef, (snapshot) => {
       setAgentsList([]);
       snapshot.docs.map((doc) => {
         setAgentsList((prev) => [...prev, { data: doc.data(), id: doc.id }]);
+      });
+    });
+
+    onSnapshot(settingsRef, (snapshot) => {
+      setSettings([]);
+      snapshot.docs.map((doc) => {
+        setSettings((prev) => [...prev, { data: doc.data(), id: doc.id }]);
       });
     });
 
@@ -83,11 +96,28 @@ export default function Home() {
 
   return (
     <>
+      <ElevateAppBar />
       <WelcomeBanner selectedAgent={selectedAgent} />
       <Section />
 
       <TabsForBanks />
       <ImagesContent />
+
+      <Footer
+        footerTitle={settings[0]?.data?.title}
+        footerEmail={settings[0]?.data?.email}
+        footerContact={settings[0]?.data?.contact}
+        footerAddress1={settings[0]?.data?.address1}
+        footerAddress2={settings[0]?.data?.address2}
+      />
+      <ToastContainer
+        enableMultiContainer
+        containerId={"home-notifications"}
+        position={toast.POSITION.TOP_CENTER}
+        pauseOnHover={false}
+        transition={Zoom}
+        autoClose={3000}
+      />
     </>
   );
 }

@@ -6,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import CustomizedAccordions from "./CustomizeAccordions";
 import CustomizedAccordionsForDoctors from "./CustomizeAccordionsForDoctors";
+import { Stack } from "@mui/material";
+import Image from "next/image";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -45,20 +47,33 @@ export default function BasicTabs() {
 
   return (
     <Box sx={{ width: "100%" }} id="loan-types">
-      <Typography
-        variant="h2"
-        fontSize={{ xs: 18, md: 28 }}
-        color={"white"}
-        textAlign={"center"}
-        sx={{
-          background:
-            "linear-gradient(-90deg, rgba(240,63,70,1) 1%, rgba(255,0,0,1) 100%)",
-          width: { xs: "100%", md: "30%" },
-        }}
-        borderRadius={2}
+      <Stack
+        flexDirection={{ xs: "column", md: "row" }}
+        alignItems={"center"}
+        justifyContent={"space-between"}
       >
-        LOAN TYPES
-      </Typography>
+        <Typography
+          order={{ xs: 1, md: 0 }}
+          my={{ xs: 2, md: 1 }}
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background: "rgba(250,0,0,1)",
+            width: { xs: "100%", md: "30%" },
+          }}
+          borderRadius={2}
+        >
+          Loan Types
+        </Typography>
+        <Image
+          src={"/rsbc.jpg"}
+          alt="security-bank-logo"
+          width={100}
+          height={100}
+        />
+      </Stack>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           value={value2}
