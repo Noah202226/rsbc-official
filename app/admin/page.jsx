@@ -1,28 +1,21 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Card,
-  Grid,
-  Paper,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import AgentList from "./AgentList";
 import AddAgent from "./AddAgent";
 import { useRef, useState } from "react";
 import SelectedAgent from "./SelectedAgent";
 import AgentSelection from "./AgentSelection";
+import Login from "./Login";
 
 const page = () => {
+  const [isLogged, setIsLogged] = useState(false);
   const newAgentFormRef = useRef();
   const [agentName, setAgentName] = useState("");
   const [agentCode, setAgentCode] = useState("");
 
   const [selectedAgent, setSelectedAgent] = useState("");
-  return (
+  return isLogged ? (
     <Box sx={{ display: "grid", placeItems: "center" }}>
       <Box width={"100%"}>
         <Typography variant="h2" textAlign={"center"}>
@@ -76,6 +69,8 @@ const page = () => {
         </Grid>
       </Box>
     </Box>
+  ) : (
+    <Login setIsLogged={setIsLogged} />
   );
 };
 

@@ -7,6 +7,7 @@ import { db } from "./utils/firebase";
 import { collection, doc, getDoc, onSnapshot } from "firebase/firestore";
 import { useSearchParams } from "next/navigation";
 import ColorTabs from "./components/ColoredTabs";
+import TabsForBanks from "./components/TabsForBanks";
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -84,8 +85,8 @@ export default function Home() {
     <>
       <WelcomeBanner selectedAgent={selectedAgent} />
       <Section />
-      <ColorTabs />
 
+      <TabsForBanks />
       <ImagesContent />
     </>
   );

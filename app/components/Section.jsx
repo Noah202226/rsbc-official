@@ -136,42 +136,6 @@ const Section = () => {
           </Typography>
         </Grid>
       </Grid>
-
-      <Typography
-        variant="h2"
-        fontSize={{ xs: 26, md: 46 }}
-        my={{ xs: 2, md: 1 }}
-        color={"white"}
-        textAlign={"center"}
-        sx={{
-          background:
-            "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
-          width: { xs: "100%", md: "60%" },
-        }}
-        borderRadius={2}
-      >
-        MULTI PURPOSE BANKS
-      </Typography>
-
-      <Grid container>
-        <Grid item xs={12} md={4}>
-          <Typography variant="h6" textAlign={"center"}>
-            RSBC
-          </Typography>
-        </Grid>
-
-        <Grid item xs={12} md={4}>
-          <Typography variant="h6" textAlign={"center"}>
-            EAST WEST
-          </Typography>
-        </Grid>
-
-        <Grid item xs={12} md={4}>
-          <Typography variant="h6" textAlign={"center"}>
-            SECURITY BANK
-          </Typography>
-        </Grid>
-      </Grid>
     </Box>
   );
 };

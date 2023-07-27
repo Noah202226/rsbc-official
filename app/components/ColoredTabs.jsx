@@ -18,7 +18,7 @@ function CustomTabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      {value === index && <Box sx={{ p: { xs: 0.5, md: 3 } }}>{children}</Box>}
     </div>
   );
 }
@@ -37,23 +37,17 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs() {
-  const [value, setValue] = React.useState(0);
+  const [value2, setValue2] = React.useState(0);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setValue2(newValue);
   };
 
   return (
-    <Box
-      sx={{ width: "100%" }}
-      mt={{ xs: 0, md: 5 }}
-      id="loan-types"
-      className="card"
-    >
+    <Box sx={{ width: "100%" }} id="loan-types">
       <Typography
         variant="h2"
-        fontSize={{ xs: 26, md: 46 }}
-        my={{ xs: 2, md: 1 }}
+        fontSize={{ xs: 18, md: 28 }}
         color={"white"}
         textAlign={"center"}
         sx={{
@@ -65,9 +59,9 @@ export default function BasicTabs() {
       >
         LOAN TYPES
       </Typography>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }} className="card">
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
-          value={value}
+          value={value2}
           onChange={handleChange}
           aria-label="basic tabs example"
         >
@@ -88,10 +82,10 @@ export default function BasicTabs() {
           />
         </Tabs>
       </Box>
-      <CustomTabPanel value={value} index={0}>
+      <CustomTabPanel value={value2} index={0}>
         <CustomizedAccordions />
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
+      <CustomTabPanel value={value2} index={1}>
         <CustomizedAccordionsForDoctors />
         <Typography
           variant="body"
@@ -105,7 +99,7 @@ export default function BasicTabs() {
           could choose either 18 months or 1 year and a half instead.
         </Typography>
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
+      <CustomTabPanel value={value2} index={2}>
         Item Three
       </CustomTabPanel>
     </Box>

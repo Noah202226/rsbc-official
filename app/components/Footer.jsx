@@ -26,18 +26,17 @@ const Footer = () => {
           <Stack>
             <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
               rsbcprimesmarketing@gmail.com
-            </Typography>
-
-            <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
-              # 8747 BA Lepanto Building Paseo De Roxas, Makati City
               <br />
               0928 521 2840
+            </Typography>
+
+            <br />
+            <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
+              # 8747 BA Lepanto Building Paseo De Roxas, Makati City
             </Typography>
             <br />
             <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
               Maxi Gas, 2nd Floor, High Way, Makapilapil, San Ildefonso, Bulacan
-              <br />
-              0928 521 2840
             </Typography>
           </Stack>
         </Grid>
