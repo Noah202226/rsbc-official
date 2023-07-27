@@ -9,8 +9,8 @@ const Login = ({ setIsLogged }) => {
     <Paper
       elevation={3}
       sx={{
-        height: 300,
-        width: 500,
+        // height: 300,
+        // width: 500,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
