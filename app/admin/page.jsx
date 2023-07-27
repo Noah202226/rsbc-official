@@ -13,7 +13,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const page = () => {
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
   const newAgentFormRef = useRef();
   const [agentName, setAgentName] = useState("");
   const [agentCode, setAgentCode] = useState("");
