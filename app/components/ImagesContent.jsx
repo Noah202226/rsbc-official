@@ -13,7 +13,7 @@ const ImagesContent = () => {
         justifyContent={"center"}
         spacing={3}
       >
-        <Grid item xs={12} sm={6} order={{ xs: 2, sm: 1 }} className="card">
+        {/* <Grid item xs={12} sm={6} order={{ xs: 2, sm: 1 }} className="card">
           <Stack>
             <Image
               className="content"
@@ -22,14 +22,15 @@ const ImagesContent = () => {
               width={300}
               height={300}
             />
-            {/* <Typography variant="caption" textAlign={"center"}>
+            <Typography variant="caption" textAlign={"center"}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
               doloremque mollitia facilis earum aperiam? Mollitia, corrupti
               excepturi! Cumque omnis laboriosam modi dolores nostrum alias
               nobis, delectus expedita, eveniet, itaque ipsa?
-            </Typography> */}
+            </Typography>
           </Stack>
-        </Grid>
+        </Grid> */}
+
         <Grid item xs={12} sm={6} order={{ xs: 1, sm: 2 }} className="card">
           <Image
             className="content"
@@ -60,7 +61,8 @@ const ImagesContent = () => {
             delectus expedita, eveniet, itaque ipsa?
           </Typography> */}
         </Grid>
-        <Grid item xs={12} sm={6} order={{ xs: 1, sm: 2 }} className="card">
+
+        {/* <Grid item xs={12} sm={6} order={{ xs: 1, sm: 2 }} className="card">
           <Image
             className="content"
             src={"/4.jpg"}
@@ -68,13 +70,13 @@ const ImagesContent = () => {
             width={300}
             height={300}
           />
-          {/* <Typography variant="caption" textAlign={"center"}>
+          <Typography variant="caption" textAlign={"center"}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
             doloremque mollitia facilis earum aperiam? Mollitia, corrupti
             excepturi! Cumque omnis laboriosam modi dolores nostrum alias nobis,
             delectus expedita, eveniet, itaque ipsa?
-          </Typography> */}
-        </Grid>
+          </Typography>
+        </Grid> */}
       </Grid>
     </Box>
   );

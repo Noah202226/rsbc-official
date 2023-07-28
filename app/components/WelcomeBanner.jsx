@@ -151,19 +151,22 @@ const WelcomeBanner = ({ selectedAgent }) => {
           className="card"
         >
           <Stack
-            flexDirection={"column"}
-            alignItems={{ xs: "flex-start", md: "flex-end" }}
+            flexDirection={"row"}
+            alignItems={{ xs: "flex-start", md: "center" }}
             justifyContent={"flex-end"}
-            className="bounceContainer "
           >
+            <Image src={"/rsbc.jpg"} alt="rsbc" width={100} height={100} />
             <Typography
               variant="h3"
               my={{ xs: 2, md: 0 }}
               textAlign={{ xs: "center", md: "center" }}
-              sx={{ textDecoration: "underline" }}
-              fontSize={{ xs: 16, md: 30 }}
+              // sx={{ textDecoration: "underline" }}
+              fontSize={{ xs: 16, md: 36 }}
+              fontWeight={"bolder"}
+              color={"red"}
             >
-              RSBC Bulacan Primes Marketing Consulting
+              RSBC Bulacan Primes <br />{" "}
+              <span style={{ color: "green" }}> Marketing Consulting</span>
             </Typography>
           </Stack>
 

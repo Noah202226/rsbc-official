@@ -78,7 +78,7 @@ const Footer = ({
                 sx={{
                   "&:hover": {
                     background:
-                      "linear-gradient(90deg, rgba(2,6,150,1) 0%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
+                      "linear-gradient(90deg, rgba(2,100,0,1) 10%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
                     color: "cyan",
                   },
                 }}

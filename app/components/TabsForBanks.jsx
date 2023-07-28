@@ -7,8 +7,9 @@ import Box from "@mui/material/Box";
 import CustomizedAccordions from "./CustomizeAccordions";
 import CustomizedAccordionsForDoctors from "./CustomizeAccordionsForDoctors";
 import ColoredTabs from "./ColoredTabs";
-import { Grid, Stack } from "@mui/material";
+import { Button, Grid, Stack } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -448,7 +449,7 @@ export default function TabsForBanks() {
       <CustomTabPanel value={value} index={2}>
         <Stack
           flexDirection={{ xs: "column", md: "row" }}
-          alignItems={"center"}
+          alignItems={"flex-end"}
           justifyContent={"space-between"}
         >
           <Typography
@@ -466,12 +467,26 @@ export default function TabsForBanks() {
           >
             Are You Qualified?
           </Typography>
-          <Image
-            src={"/security-bank.jpg"}
-            alt="security-bank-logo"
-            width={100}
-            height={100}
-          />
+
+          <Stack alignItems={"center"}>
+            <Image
+              src={"/security-bank.jpg"}
+              alt="security-bank-logo"
+              width={100}
+              height={100}
+            />
+
+            <Button
+              variant="contained"
+              color="success"
+              href={"/sb-form.pdf"}
+              download
+              target="_blank"
+              sx={{ backgroundColor: "rgba(44,59,85,1)", my: 1 }}
+            >
+              Download PDF FORM
+            </Button>
+          </Stack>
         </Stack>
 
         <Typography>
@@ -618,6 +633,7 @@ export default function TabsForBanks() {
             width: { xs: "100%", md: "30%" },
           }}
           borderRadius={2}
+          my={{ xs: 2, md: 3 }}
         >
           Self-Employed
         </Typography>
