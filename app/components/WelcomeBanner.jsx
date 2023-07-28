@@ -109,11 +109,11 @@ const WelcomeBanner = ({ selectedAgent, words }) => {
 
                 <Box className="words-wrapper">
                   <div className="words">
-                    <span className="word">{words[1]?.data?.word1}</span>
-                    <span className="word">{words[1]?.data?.word2}</span>
-                    <span className="word">{words[1]?.data?.word3}</span>
-                    <span className="word">{words[1]?.data?.word4}</span>
-                    <span className="word">{words[1]?.data?.word5}</span>
+                    <span className="word">{words[2]?.data?.word1}</span>
+                    <span className="word">{words[2]?.data?.word2}</span>
+                    <span className="word">{words[2]?.data?.word3}</span>
+                    <span className="word">{words[2]?.data?.word4}</span>
+                    <span className="word">{words[2]?.data?.word5}</span>
                   </div>
                 </Box>
               </Stack>
