@@ -11,6 +11,7 @@ import TabsForBanks from "./components/TabsForBanks";
 import { Flip, ToastContainer, Zoom, toast } from "react-toastify";
 import Footer from "./components/Footer";
 import ElevateAppBar from "./components/ElevateAppBar";
+import { Container } from "@mui/material";
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -97,12 +98,13 @@ export default function Home() {
   return (
     <>
       <ElevateAppBar />
-      <WelcomeBanner selectedAgent={selectedAgent} />
-      <Section />
+      <Container maxWidth="xl">
+        <WelcomeBanner selectedAgent={selectedAgent} words={settings} />
+        <Section />
 
-      <TabsForBanks />
-      <ImagesContent />
-
+        <TabsForBanks />
+        <ImagesContent settings={settings} />
+      </Container>
       <Footer
         footerTitle={settings[0]?.data?.title}
         footerEmail={settings[0]?.data?.email}

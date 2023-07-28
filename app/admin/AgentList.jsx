@@ -22,7 +22,7 @@ const AgentList = () => {
     <Paper
       elevation={5}
       sx={{
-        height: 300,
+        height: 720,
         overflowY: "auto",
         padding: 1,
         "&::hover": { cursor: "all-scroll" },

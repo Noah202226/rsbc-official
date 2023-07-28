@@ -23,7 +23,7 @@ import emailjs from "@emailjs/browser";
 import BannerImg from "../../public/young-couple-holding.jpg";
 import { toast } from "react-toastify";
 
-const WelcomeBanner = ({ selectedAgent }) => {
+const WelcomeBanner = ({ selectedAgent, words }) => {
   const form = useRef();
   const [monthlyPay, setMonthlyPay] = useState();
   const [desiredAmount, setDesiredAmount] = useState("");
@@ -109,11 +109,11 @@ const WelcomeBanner = ({ selectedAgent }) => {
 
                 <Box className="words-wrapper">
                   <div className="words">
-                    <span className="word">Business Investment</span>
-                    <span className="word">Personal Investment</span>
-                    <span className="word">House Construction</span>
-                    <span className="word">Refinancing</span>
-                    <span className="word">Working Capital</span>
+                    <span className="word">{words[1]?.data?.word1}</span>
+                    <span className="word">{words[1]?.data?.word2}</span>
+                    <span className="word">{words[1]?.data?.word3}</span>
+                    <span className="word">{words[1]?.data?.word4}</span>
+                    <span className="word">{words[1]?.data?.word5}</span>
                   </div>
                 </Box>
               </Stack>
@@ -124,10 +124,8 @@ const WelcomeBanner = ({ selectedAgent }) => {
             {BannerImg ? (
               <Image
                 className="bannerImage"
-                // src={"/handsome-man.jpg"}
-                src={BannerImg}
-                // src={"/online-microcredit-loans.jpg"}
-                // src={"/crop.jpg"}
+                // src={BannerImg}
+                src={words[1]?.data?.image1}
                 alt="joyful-woman"
                 width={200}
                 height={200}
@@ -257,8 +255,8 @@ const WelcomeBanner = ({ selectedAgent }) => {
                     value={loanDuration}
                     onChange={(e) => setLoanDuration(e.target.value)}
                   >
-                    <MenuItem value={6}>6 Months</MenuItem>
                     <MenuItem value={12}>12 Months</MenuItem>
+                    <MenuItem value={18}>18 Months</MenuItem>
                     <MenuItem value={24}>24 Months</MenuItem>
                     <MenuItem value={36}>36 Months</MenuItem>
                   </Select>

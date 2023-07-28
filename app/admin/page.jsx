@@ -11,6 +11,7 @@ import { Flip, Slide, ToastContainer, Zoom, toast } from "react-toastify";
 import Settings from "./Settings";
 import Link from "next/link";
 import Image from "next/image";
+import ScrollingWords from "./ScrollingWords";
 
 const page = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -102,7 +103,8 @@ const page = () => {
               </Grid>
 
               <Grid item xs={12} md={6}>
-                <Typography variant="h6">Website Settings</Typography>
+                <Typography variant="h5">Website Settings</Typography>
+
                 <Settings />
               </Grid>
             </Grid>

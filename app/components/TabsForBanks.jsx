@@ -140,7 +140,7 @@ export default function TabsForBanks() {
       <CustomTabPanel value={value} index={1}>
         <Stack
           flexDirection={{ xs: "column", md: "row" }}
-          alignItems={"center"}
+          alignItems={"flex-end"}
           justifyContent={"space-between"}
         >
           <Typography
@@ -476,7 +476,7 @@ export default function TabsForBanks() {
               height={100}
             />
 
-            <Button
+            {/* <Button
               variant="contained"
               color="success"
               href={"/sb-form.pdf"}
@@ -485,7 +485,7 @@ export default function TabsForBanks() {
               sx={{ backgroundColor: "rgba(44,59,85,1)", my: 1 }}
             >
               Download PDF FORM
-            </Button>
+            </Button> */}
           </Stack>
         </Stack>
 

@@ -8,6 +8,7 @@ import CustomizedAccordions from "./CustomizeAccordions";
 import CustomizedAccordionsForDoctors from "./CustomizeAccordionsForDoctors";
 import { Stack } from "@mui/material";
 import Image from "next/image";
+import CustomizedAccordionsForBankers from "./CustomizeAccordionsForBankers";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -49,7 +50,7 @@ export default function BasicTabs() {
     <Box sx={{ width: "100%" }} id="loan-types">
       <Stack
         flexDirection={{ xs: "column", md: "row" }}
-        alignItems={"center"}
+        alignItems={"flex-end"}
         justifyContent={"space-between"}
       >
         <Typography
@@ -111,11 +112,11 @@ export default function BasicTabs() {
           my={2}
         >
           Notes* for doctors loan, we don't have a 12 month term to pay, you
-          could choose either 18 months or 1 year and a half instead.
+          could choose either 18 months to 3 years instead.
         </Typography>
       </CustomTabPanel>
       <CustomTabPanel value={value2} index={2}>
-        Item Three
+        <CustomizedAccordionsForBankers />
       </CustomTabPanel>
     </Box>
   );
