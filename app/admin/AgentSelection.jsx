@@ -9,6 +9,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { db } from "../utils/firebase";
 import { collection, doc, onSnapshot, setDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const AgentSelection = ({ selectedAgent, setSelectedAgent }) => {
   const [agentsList, setAgentsList] = useState([]);
@@ -19,7 +20,11 @@ const AgentSelection = ({ selectedAgent, setSelectedAgent }) => {
     setDoc(doc(db, "activeReferral", "w621XQGQGnFN3k6DjqQM"), {
       name: selectedAgent,
     })
-      .then(() => alert("Agent changed."))
+      .then(() => {
+        toast.success("Active agent changed.", {
+          containerId: "admin-notifications",
+        });
+      })
       .catch((e) => console.log(e));
   };
 

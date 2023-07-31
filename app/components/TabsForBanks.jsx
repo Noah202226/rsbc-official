@@ -79,8 +79,8 @@ export default function TabsForBanks() {
     <Box
       sx={{ width: "100%" }}
       mt={{ xs: 5, md: 5 }}
-      id="loan-types"
       className="card"
+      id="multi-purpose-bank"
     >
       <Stack
         flexDirection={"row"}

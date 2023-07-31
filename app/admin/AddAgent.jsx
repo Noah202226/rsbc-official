@@ -1,7 +1,8 @@
-import { Button, TextField, Typography } from "@mui/material";
+import { Button, Stack, TextField, Typography } from "@mui/material";
 import { addDoc, collection, doc } from "firebase/firestore";
 import React from "react";
 import { db } from "../utils/firebase";
+import { toast } from "react-toastify";
 
 const AddAgent = ({
   newAgentFormRef,
@@ -12,10 +13,13 @@ const AddAgent = ({
 }) => {
   const addAgentHandler = () => {
     console.log("adding agent...");
-    addDoc(collection(db, "agents"), { name: agentName, code: agentCode })
+    addDoc(collection(db, "agents"), { name: agentName })
       .then(() => {
         newAgentFormRef.current.close();
-        alert("New agent added.");
+        // alert("New agent added.");
+        toast.success("Agent successfully saved.", {
+          containerId: "admin-notifications",
+        });
 
         setAgentName("");
         setAgentCode("");
@@ -24,21 +28,24 @@ const AddAgent = ({
   };
   return (
     <dialog ref={newAgentFormRef}>
-      <Typography>New Agent</Typography>
-      <TextField
-        placeholder="Agent Name"
-        value={agentName}
-        onChange={(e) => setAgentName(e.target.value)}
-      />
-      <TextField
+      <Typography variant="h4">New Agent</Typography>
+
+      <Stack>
+        <TextField
+          placeholder="Agent Name"
+          value={agentName}
+          onChange={(e) => setAgentName(e.target.value)}
+        />
+        {/* <TextField
         placeholder="Agent Code"
         value={agentCode}
         onChange={(e) => setAgentCode(e.target.value)}
-      />
+      /> */}
 
-      <Button variant="contained" color="warning" onClick={addAgentHandler}>
-        Save
-      </Button>
+        <Button variant="contained" color="warning" onClick={addAgentHandler}>
+          Save
+        </Button>
+      </Stack>
     </dialog>
   );
 };

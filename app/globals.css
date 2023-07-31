@@ -248,6 +248,21 @@ span.word {
   }
 }
 
+/* Styles for the dialog */
+dialog {
+  /* Center the dialog horizontally and vertically */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Add other styling as needed */
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 5);
+  border-radius: 4px;
+}
+
 /* Card Animation */
 
 .card {

@@ -67,6 +67,7 @@ const WelcomeBanner = ({ selectedAgent, words }) => {
   return (
     <Box
       className="withBg"
+
       // sx={{
       //   backgroundImage: "url('/atm-banner.jpg')",
       //   backgroundSize: "contain",
@@ -74,7 +75,7 @@ const WelcomeBanner = ({ selectedAgent, words }) => {
       //   // backgroundPosition: "-100px 10px",
       // }}
     >
-      <Grid container>
+      <Grid id="header" container>
         <Grid
           item
           container
@@ -177,7 +178,13 @@ const WelcomeBanner = ({ selectedAgent, words }) => {
                 flexDirection: "column",
               }}
             >
-              <Typography mb={1} variant="body" textAlign={"start"}>
+              <Typography
+                mb={1}
+                variant="body"
+                textAlign={{ xs: "start", md: "center" }}
+                fontWeight="bolder"
+                color={"green"}
+              >
                 Loan Calculator
               </Typography>
               <Stack flexDirection={{ xs: "column", md: "row" }}>

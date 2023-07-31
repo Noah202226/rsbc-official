@@ -19,7 +19,7 @@ const Header = () => {
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
-        inline: "nearest",
+        inline: "start",
       });
     }
   }
@@ -67,21 +67,12 @@ const Header = () => {
             <Typography
               variant="h6"
               fontFamily={"serif"}
-              onClick={() => smoothScrollTo("why")}
+              onClick={() => smoothScrollTo("multi-purpose-bank")}
             >
               Multi Purpose Bank
             </Typography>
           </li>
 
-          {/* <li onClick={showMenu ? toggleMenu : () => {}}>
-            <Typography
-              variant="h6"
-              fontFamily={"serif"}
-              onClick={() => smoothScrollTo("loan-types")}
-            >
-              Loan Types
-            </Typography>
-          </li> */}
           <li onClick={showMenu ? toggleMenu : () => {}}>
             <Typography
               variant="h6"
