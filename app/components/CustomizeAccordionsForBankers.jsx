@@ -92,6 +92,12 @@ export default function CustomizedAccordionsForBankers() {
             <li>
               <Typography>3. Three (3) months bank statement</Typography>
             </li>
+            <li>
+              <Typography>3. One (1) month payslip</Typography>
+            </li>
+            <li>
+              <Typography>3. Gov’t ID and Company Id</Typography>
+            </li>
           </ul>
         </AccordionDetails>
       </Accordion>
@@ -129,6 +135,12 @@ export default function CustomizedAccordionsForBankers() {
             </li>
             <li>
               <Typography>3. Two (2) Payslip</Typography>
+            </li>
+            <li>
+              <Typography>4. Latest COE</Typography>
+            </li>
+            <li>
+              <Typography>5. Gov’t Id and Company ID</Typography>
             </li>
           </ul>
         </AccordionDetails>

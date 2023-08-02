@@ -335,4 +335,8 @@ dialog {
     margin: 0;
     margin-top: 1rem;
   }
+
+  .rsbc-welcome-banner {
+    display: none;
+  }
 }

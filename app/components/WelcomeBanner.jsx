@@ -154,13 +154,19 @@ const WelcomeBanner = ({ selectedAgent, words }) => {
             alignItems={{ xs: "flex-start", md: "center" }}
             justifyContent={"flex-end"}
           >
-            <Image src={"/rsbc.jpg"} alt="rsbc" width={100} height={100} />
+            <Image
+              className="rsbc-welcome-banner"
+              src={"/rsbc.jpg"}
+              alt="rsbc"
+              width={100}
+              height={100}
+            />
             <Typography
               variant="h3"
               my={{ xs: 2, md: 0 }}
               textAlign={{ xs: "center", md: "center" }}
               // sx={{ textDecoration: "underline" }}
-              fontSize={{ xs: 16, md: 36 }}
+              fontSize={{ xs: 30, md: 36 }}
               fontWeight={"bolder"}
               color={"red"}
             >

@@ -117,7 +117,7 @@ export default function TabsForBanks() {
           sx={{ justifyContent: "space-between" }}
         >
           <Tab
-            label="RSBC"
+            label="CTBC"
             {...a11yProps(0)}
             sx={{ fontSize: { xs: 12, md: 26 }, textTransform: "capitalize" }}
           />
@@ -181,6 +181,10 @@ export default function TabsForBanks() {
           • Gross (basic) monthly income (GMI) must be at least Phpl5,000 or
           basic annual income or must not be less than Php180,000
         </Typography>
+        <Typography>
+          • Atleast 20k and then annual gross income is 240k
+        </Typography>
+        <Typography>• Non- Carded or no Credit card is Accepted</Typography>
 
         <Typography
           variant="h2"
@@ -528,6 +532,10 @@ export default function TabsForBanks() {
         <Typography>
           • Residence or office is within Bank's service processing area
         </Typography>
+        <Typography>• Latest COE</Typography>
+        <Typography>• Gov’t Id and Company Id</Typography>
+        <Typography>• 1 Month payslip</Typography>
+        <Typography>• Metro manila 25k , outside metro manila- 20k</Typography>
 
         <Typography
           variant="h2"
