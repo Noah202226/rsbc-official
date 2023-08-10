@@ -30,7 +30,7 @@ export async function POST(req) {
     text: `You have a new loan qoutation.`,
     html: `<div style="border: 1px solid #ccc; padding: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
             <p style='color: coral, font-size: 36px'>You have a new loan qoutation </p>
-            <img src='https://rsbc-official.vercel.app/rsbc.jpg' alt='rsbc-logo' />
+            <img style="height: 36px, width: 36px" src='https://rsbc-official.vercel.app/rsbc.jpg' alt='rsbc-logo' />
             <br /> Name: ${res.name}
             <br /> Email: ${res.email}
             <br /> Desired Amount: <em style='font-weight: bolder'> ${res.desiredAmount} </em> 
