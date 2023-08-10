@@ -6,7 +6,7 @@ import nodemailer from "nodemailer";
 export async function POST(req) {
   const res = await req.json();
 
-  const mailList = ["profx201926@gmail.com", res.selectedAgentEmail];
+  const mailList = ["rsbcprimesmarketing@gmail.com", res.selectedAgentEmail];
 
   console.log(res);
   console.log("Agent email:", res.selectedAgentEmail);
@@ -24,7 +24,7 @@ export async function POST(req) {
 
   // Create the email
   const mailOptions = {
-    from: "RSBC <noaligpitan@email.com>",
+    from: "RSBC <rsbcprimesmarketing@gmail.com>",
     to: mailList,
     subject: "RSBC EMAIL QOUTATION",
     text: `You have a new loan qoutation.`,
