@@ -1,7 +1,17 @@
-import { Box, Button, Paper, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Paper,
+  Stack,
+  TextField,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import React, { useRef } from "react";
 import LoginFormButton from "./LoginFormButton";
 import { ToastContainer, toast } from "react-toastify";
+import Link from "next/link";
+import Image from "next/image";
 
 const Login = ({ setIsLogged }) => {
   const loginFormRef = useRef();
@@ -9,12 +19,13 @@ const Login = ({ setIsLogged }) => {
     <Paper
       elevation={3}
       sx={{
-        // height: 300,
-        // width: 500,
+        height: 300,
+        width: 500,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-around",
+        mt: 10,
       }}
     >
       <form
@@ -29,9 +40,33 @@ const Login = ({ setIsLogged }) => {
           padding: 10,
         }}
       >
-        <Typography variant="h4" textAlign={"center"}>
-          Login
-        </Typography>
+        <Stack
+          flexDirection={"row"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          width={"100%"}
+          mx={10}
+        >
+          <Typography
+            variant="h5"
+            textAlign={"end"}
+            justifyContent={"flex-end"}
+            sx={{ mt: 5 }}
+          >
+            RSBC ADMIN SECTION
+          </Typography>
+
+          <Tooltip title="Back to homepage">
+            <Link href={"/"}>
+              <Image
+                src={"/rsbc.jpg"}
+                alt="security-bank-logo"
+                width={60}
+                height={60}
+              />
+            </Link>
+          </Tooltip>
+        </Stack>
         <TextField type="text" placeholder="User" name="user" fullWidth />
         <TextField
           type="password"

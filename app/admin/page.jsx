@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack, Tooltip, Typography } from "@mui/material";
 import AgentList from "./AgentList";
 import AddAgent from "./AddAgent";
 import { useRef, useState } from "react";
@@ -18,24 +18,19 @@ const page = () => {
   const newAgentFormRef = useRef();
   const [agentName, setAgentName] = useState("");
   const [agentCode, setAgentCode] = useState("");
+  const [agentEmail, setAgentEmail] = useState("");
 
   const [selectedAgent, setSelectedAgent] = useState("");
+  const [selectedAgentEmail, setSelectedAgentEmail] = useState("");
 
   return (
     <Box
       sx={{
-        display: "grid",
-        placeItems: "center",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      <Link href={"/"}>
-        <Image
-          src={"/rsbc.jpg"}
-          alt="security-bank-logo"
-          width={100}
-          height={100}
-        />
-      </Link>
       {isLogged ? (
         <Box
           sx={{
@@ -46,9 +41,31 @@ const page = () => {
           }}
         >
           <Box width={"100%"}>
-            <Typography variant="h3" textAlign={"center"}>
-              Admin Page
-            </Typography>
+            <Stack
+              flexDirection={"row"}
+              alignItems={"center"}
+              justifyContent={"space-between"}
+              mx={10}
+            >
+              <Typography
+                variant="h5"
+                textAlign={"end"}
+                justifyContent={"flex-end"}
+              >
+                RSBC ADMIN SECTION
+              </Typography>
+
+              <Tooltip title="Back to homepage">
+                <Link href={"/"}>
+                  <Image
+                    src={"/rsbc.jpg"}
+                    alt="security-bank-logo"
+                    width={60}
+                    height={60}
+                  />
+                </Link>
+              </Tooltip>
+            </Stack>
 
             <Grid container spacing={2} width={"100%"}>
               <Grid item xs={12} md={6}>
@@ -72,6 +89,8 @@ const page = () => {
                   <AgentSelection
                     selectedAgent={selectedAgent}
                     setSelectedAgent={setSelectedAgent}
+                    selectedAgentEmail={selectedAgentEmail}
+                    setSelectedAgentEmail={setSelectedAgentEmail}
                   />
                 </Stack>
                 <Box padding={1}>
@@ -89,6 +108,8 @@ const page = () => {
                       setAgentName={setAgentName}
                       agentCode={agentCode}
                       setAgentCode={setAgentCode}
+                      agentEmail={agentEmail}
+                      setAgentEmail={setAgentEmail}
                     />
                     <Button
                       variant="contained"

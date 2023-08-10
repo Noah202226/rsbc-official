@@ -8,12 +8,13 @@ const AddAgent = ({
   newAgentFormRef,
   agentName,
   setAgentName,
-  agentCode,
+  agentEmail,
+  setAgentEmail,
   setAgentCode,
 }) => {
   const addAgentHandler = () => {
     console.log("adding agent...");
-    addDoc(collection(db, "agents"), { name: agentName })
+    addDoc(collection(db, "agents"), { name: agentName, email: agentEmail })
       .then(() => {
         newAgentFormRef.current.close();
         // alert("New agent added.");
@@ -22,7 +23,7 @@ const AddAgent = ({
         });
 
         setAgentName("");
-        setAgentCode("");
+        setAgentEmail("");
       })
       .catch((e) => alert(e));
   };
@@ -36,11 +37,11 @@ const AddAgent = ({
           value={agentName}
           onChange={(e) => setAgentName(e.target.value)}
         />
-        {/* <TextField
-        placeholder="Agent Code"
-        value={agentCode}
-        onChange={(e) => setAgentCode(e.target.value)}
-      /> */}
+        <TextField
+          placeholder="Email"
+          value={agentEmail}
+          onChange={(e) => setAgentEmail(e.target.value)}
+        />
 
         <Button variant="contained" color="warning" onClick={addAgentHandler}>
           Save

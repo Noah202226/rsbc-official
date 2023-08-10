@@ -23,45 +23,92 @@ import emailjs from "@emailjs/browser";
 import BannerImg from "../../public/young-couple-holding.jpg";
 import { toast } from "react-toastify";
 
-const WelcomeBanner = ({ selectedAgent, words }) => {
+const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
   const form = useRef();
+
+  const [isSubmiting, setIsSubmiting] = useState(false);
+
   const [monthlyPay, setMonthlyPay] = useState();
   const [desiredAmount, setDesiredAmount] = useState("");
   const [status, setStatus] = useState("");
   const [loanDuration, setLoanDuration] = useState("");
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
   const sendData = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          form.current.reset();
-          // alert("Email sent.");
-          setDesiredAmount("");
-          setStatus("");
-          setLoanDuration();
-          setMonthlyPay();
-          toast.success(
-            "Email sent. You will get response as soon as possible, Thanks!",
-            { containerId: "home-notifications" }
-          );
+    setIsSubmiting(true);
+
+    // emailjs
+    //   .sendForm(
+    //     process.env.NEXT_PUBLIC_SERVICE_ID,
+    //     process.env.NEXT_PUBLIC_TEMPLATE_ID,
+    //     form.current,
+    //     process.env.NEXT_PUBLIC_PUBLIC_KEY
+    //   )
+    //   .then(
+    //     (result) => {
+    //       console.log(result.text);
+    //       form.current.reset();
+    //       // alert("Email sent.");
+    //       setDesiredAmount("");
+    //       setStatus("");
+    //       setLoanDuration();
+    //       setMonthlyPay();
+    //       toast.success(
+    //         "Email sent. You will get response as soon as possible, Thanks!",
+    //         { containerId: "home-notifications" }
+    //       );
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //       // alert("Email not sent.", error.text);
+    //       toast.success(`Email failed to sent. ${error.text}`, {
+    //         containerId: "home-notifications",
+    //       });
+    //     }
+    //   );
+
+    // Nodemailer
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        (error) => {
-          console.log(error.text);
-          // alert("Email not sent.", error.text);
-          toast.success(`Email failed to sent. ${error.text}`, {
-            containerId: "home-notifications",
-          });
-        }
-      );
+        body: JSON.stringify({
+          name,
+          email,
+          desiredAmount,
+          status,
+          loanDuration,
+          selectedAgent,
+          selectedAgentEmail,
+        }),
+      });
+
+      const data = await response.json();
+      console.log("Response:", data);
+
+      if (data) {
+        toast.success(
+          "Email sent. You will get response as soon as possible, Thanks!",
+          { containerId: "home-notifications" }
+        );
+        setDesiredAmount("");
+        setStatus("");
+        setLoanDuration("");
+        setMonthlyPay("");
+        setName("");
+        setEmail("");
+        setIsSubmiting(false);
+      }
+    } catch (error) {
+      toast.error("Email note sent. ", { containerId: "home-notifications" });
+      console.error("Error sending email:", error);
+    }
   };
 
   return (
@@ -199,6 +246,8 @@ const WelcomeBanner = ({ selectedAgent, words }) => {
                   fullWidth
                   type="text"
                   name="user_name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="Your name"
                   required
                 />
@@ -207,6 +256,8 @@ const WelcomeBanner = ({ selectedAgent, words }) => {
                   fullWidth
                   type="email"
                   name="user_email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email (optional)"
                   // required
                 />
@@ -371,7 +422,7 @@ const WelcomeBanner = ({ selectedAgent, words }) => {
                   my: 2,
                 }}
               >
-                APPLY NOW
+                {isSubmiting ? "Sending ..." : "APPLY NOW"}
               </Button>
             </form>
           </Paper>

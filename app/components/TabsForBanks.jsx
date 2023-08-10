@@ -48,29 +48,37 @@ export default function TabsForBanks() {
   };
 
   const data = [
-    { fees: "Loan Processing Fee", amount: "Php1,900" },
+    { fees: "Loan Processing Fee", amount: "Php1,900", id: 1 },
     {
+      id: 2,
       fees: "Documentary Stamp Tax (DST) on  Promissory Note (PN) ",
       amount:
         "Php1 .50 for every Php200.00 of the approved loan amount or a fraction thereof for PNs greater than Php250,000 executed by an individual for personal use and not for the business with reference to RA 9243, Sec 199 - Paragraph D. (to be deducted from the loan proceeds)",
     },
     {
+      id: 3,
       fees: "Contractual Interest Rate and Effective Interest Rate (EIR) ",
       amount:
         "The interest rates specified in Sections 6 and 7 of the Promissory Note. Per BSP Circular No. 730, EIR is the rate that exactly discounts estimated future cash flows through the life of the loan to the net amount of loan proceeds. It is the rate that best measures the true cost of credit. ",
     },
     {
+      id: 4,
       fees: "Late Payment  Fee",
       amount:
         "Php500 or 8% of the past due amount, whichever is higher. This will be applied for every  month that the account is past due. ",
     },
     {
+      id: 5,
       fees: "Processing Fee for Early Pay-Off of Loan",
       amount:
         "Php500 or 8% of the outstanding principal balance, whichever is higher",
     },
-    { fees: "Returned Check Fee", amount: "Php1 ,000 per returned check" },
-    { fees: "Check Retrieval and  Replacement Fee", amount: "Php200" },
+    {
+      id: 6,
+      fees: "Returned Check Fee",
+      amount: "Php1 ,000 per returned check",
+    },
+    { id: 7, fees: "Check Retrieval and  Replacement Fee", amount: "Php200" },
 
     // Add more data items as needed
   ];

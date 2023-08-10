@@ -8,24 +8,51 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { db } from "../utils/firebase";
-import { collection, doc, onSnapshot, setDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  onSnapshot,
+  query,
+  setDoc,
+  where,
+} from "firebase/firestore";
 import { toast } from "react-toastify";
 
-const AgentSelection = ({ selectedAgent, setSelectedAgent }) => {
+const AgentSelection = ({
+  selectedAgent,
+  setSelectedAgent,
+  selectedAgentEmail,
+  setSelectedAgentEmail,
+}) => {
   const [agentsList, setAgentsList] = useState([]);
   const colRef = collection(db, "agents");
+  const q = query(collection(db, "agents"), where("name", "==", selectedAgent));
 
   const changeAgentHandler = () => {
     console.log("changing active referal");
-    setDoc(doc(db, "activeReferral", "w621XQGQGnFN3k6DjqQM"), {
-      name: selectedAgent,
-    })
-      .then(() => {
-        toast.success("Active agent changed.", {
-          containerId: "admin-notifications",
-        });
+    console.log(selectedAgent, selectedAgentEmail);
+
+    try {
+      setDoc(doc(db, "activeReferral", "w621XQGQGnFN3k6DjqQM"), {
+        name: selectedAgent,
+        email: selectedAgentEmail,
       })
-      .catch((e) => console.log(e));
+        .then(() => {
+          toast.success("Active agent changed.", {
+            containerId: "admin-notifications",
+          });
+        })
+        .catch((e) => {
+          toast.error("Error" + e, {
+            containerId: "admin-notifications",
+          });
+        });
+    } catch (e) {
+      toast.error("Invalid email.", {
+        containerId: "admin-notifications",
+      });
+    }
   };
 
   useEffect(() => {
@@ -37,6 +64,15 @@ const AgentSelection = ({ selectedAgent, setSelectedAgent }) => {
       });
     });
   }, []);
+
+  useEffect(() => {
+    onSnapshot(q, (snapshot) => {
+      snapshot.docs.map((doc) => {
+        console.log(doc.data());
+        setSelectedAgentEmail(doc.data()?.email);
+      });
+    });
+  }, [selectedAgent]);
   return (
     <Stack
       flexDirection={"row"}

@@ -12,13 +12,15 @@ import { Flip, ToastContainer, Zoom, toast } from "react-toastify";
 import Footer from "./components/Footer";
 import ElevateAppBar from "./components/ElevateAppBar";
 import { Container } from "@mui/material";
+import EmailForm from "./components/EmailForm";
 
 export default function Home() {
   const searchParams = useSearchParams();
 
   const search = searchParams.get("ref");
 
-  const [selectedAgent, setSelectedAgent] = useState();
+  const [selectedAgent, setSelectedAgent] = useState("");
+  const [selectedAgentEmail, setSelectedAgentEmail] = useState("");
 
   const colRef = collection(db, "activeReferral");
 
@@ -58,7 +60,6 @@ export default function Home() {
     );
 
     cards.forEach((card) => {
-      console.log(card);
       observer.observe(card);
     });
   }, []);
@@ -75,12 +76,15 @@ export default function Home() {
       );
 
       if (referalAgent.length > 0) {
+        console.log(referalAgent[0]?.data?.email);
         setSelectedAgent(referalAgent[0]?.data?.name);
+        setSelectedAgentEmail(referalAgent[0]?.data?.email);
       } else {
         alert("invalid ref link. agent not found");
         getDoc(doc(db, "activeReferral", "w621XQGQGnFN3k6DjqQM"))
           .then((data) => {
             setSelectedAgent(data?.data()?.name);
+            setSelectedAgentEmail(data?.data()?.email);
             return;
           })
           .catch((e) => console.log(e));
@@ -89,6 +93,7 @@ export default function Home() {
       getDoc(doc(db, "activeReferral", "w621XQGQGnFN3k6DjqQM"))
         .then((data) => {
           setSelectedAgent(data?.data()?.name);
+          setSelectedAgentEmail(data?.data()?.email);
           return;
         })
         .catch((e) => console.log(e));
@@ -99,7 +104,11 @@ export default function Home() {
     <>
       <ElevateAppBar />
       <Container maxWidth="xl">
-        <WelcomeBanner selectedAgent={selectedAgent} words={settings} />
+        <WelcomeBanner
+          selectedAgent={selectedAgent}
+          words={settings}
+          selectedAgentEmail={selectedAgentEmail}
+        />
         <Section />
 
         <TabsForBanks />
