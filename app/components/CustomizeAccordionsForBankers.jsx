@@ -90,13 +90,10 @@ export default function CustomizedAccordionsForBankers() {
               </Typography>
             </li>
             <li>
-              <Typography>3. Three (3) months bank statement</Typography>
+              <Typography>3. One (1) month payslip</Typography>
             </li>
             <li>
-              <Typography>4. One (1) month payslip</Typography>
-            </li>
-            <li>
-              <Typography>5. Gov’t ID and Company Id</Typography>
+              <Typography>4. Gov’t ID and Company Id</Typography>
             </li>
           </ul>
         </AccordionDetails>

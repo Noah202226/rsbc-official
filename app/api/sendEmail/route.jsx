@@ -29,10 +29,18 @@ export async function POST(req) {
     subject: "RSBC EMAIL QOUTATION",
     text: `You have a new loan qoutation.`,
     html: `<div style="border: 1px solid #ccc; padding: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-            <p style='color: coral; font-size: 36px'>You have a new loan qoutation </p>
-            <img height='36px' width='36px' style="position: absolute; top: 10px; right: 10px" src='https://rsbc-official.vercel.app/rsbc.jpg' alt='rsbc-logo' />
+            
+            <div style="display: flex; align-items: center; justify-content: space-between">
+            <img height='50px' width='50px' style="position: absolute; top: 10px; right: 10px" src='https://rsbc-official.vercel.app/rsbc.jpg' alt='rsbc-logo' />
+            <p style='color: coral; font-size: 26px'>You have a new loan qoutation </p>
+            </div>
+
             <br /> Name: ${res.name}
             <br /> Email: ${res.email}
+            <br /> Contact: ${res.contact}
+            <br /> Location: ${res.location}
+            <br />
+            <br />
             <br /> Desired Amount: <em style='font-weight: bolder'> ${res.desiredAmount} </em> 
             <br /> Status: <em style='font-weight: bolder'> ${res.status}%</em>
             <br /> Loan Duration:<em style='font-weight: bolder'> ${res.loanDuration} Months</em> 

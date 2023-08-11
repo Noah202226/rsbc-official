@@ -35,6 +35,8 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
+  const [location, setLocation] = useState("");
 
   const sendData = async (e) => {
     e.preventDefault();
@@ -81,6 +83,8 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
         body: JSON.stringify({
           name,
           email,
+          contact,
+          location,
           desiredAmount,
           status,
           loanDuration,
@@ -103,6 +107,8 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
         setMonthlyPay("");
         setName("");
         setEmail("");
+        setContact("");
+        setLocation("");
         setIsSubmiting(false);
       }
     } catch (error) {
@@ -264,6 +270,29 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
               </Stack>
 
               <Stack flexDirection={{ xs: "column", md: "row" }}>
+                <TextField
+                  sx={{ mb: 1 }}
+                  fullWidth
+                  type="number"
+                  name="user_name"
+                  value={contact}
+                  onChange={(e) => setContact(e.target.value)}
+                  placeholder="Contact #"
+                  required
+                />
+                <TextField
+                  sx={{ ml: { xs: 0, md: 1 }, mb: { xs: 1, md: 0 } }}
+                  fullWidth
+                  type="text"
+                  name="user_name"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  placeholder="Location"
+                  required
+                />
+              </Stack>
+
+              <Stack flexDirection={{ xs: "column", md: "row" }}>
                 <FormControl fullWidth sx={{ mb: 1 }} required>
                   <InputLabel id="demo-simple-select-label">
                     Desire amount
@@ -298,9 +327,12 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
                   >
-                    <MenuItem value={0.0149}>Self-employed (1.49%)</MenuItem>
-                    <MenuItem value={0.0149}>Employed (1.49%) </MenuItem>
-                    <MenuItem value={0.0139}>Doctors (1.39%)</MenuItem>
+                    <MenuItem value={"self-employed"}>
+                      Self Employed (1.49%)
+                    </MenuItem>
+                    <MenuItem value={"employed"}>Employed (1.49%) </MenuItem>
+                    <MenuItem value={"doctors"}>Doctors (1.39%)</MenuItem>
+                    <MenuItem value={"bankers"}>Bankers (1.39%)</MenuItem>
                   </Select>
                 </FormControl>
 
@@ -333,6 +365,7 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
                 helperText="Monthly Pay"
                 value={monthlyPay}
                 sx={{ mb: 1 }}
+                disabled
               />
 
               <TextField
@@ -348,22 +381,32 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
                 onClick={() => {
                   console.log("Computing...");
                   const selectedStatus = form.current.status.value;
+                  let percentage;
                   const selectedLoanDuration = form.current.loan_duration.value;
                   const selectedDesiredAmount =
                     form.current.desired_amount.value;
-                  console.log(
-                    selectedDesiredAmount,
-                    selectedLoanDuration,
-                    selectedStatus
-                  );
+
+                  if (selectedStatus == "self-employed") {
+                    console.log("self-employed", 0.0149);
+                    percentage = 0.0149;
+                  } else if (selectedStatus == "employed") {
+                    percentage = 0.0149;
+                  } else if (selectedStatus == "doctors") {
+                    percentage = 0.0139;
+                  } else if (selectedStatus == "bankers") {
+                    console.log("bankers", 0.0139);
+                    percentage = 0.0139;
+                  }
+
+                  console.log(percentage);
                   console.log(Number(selectedDesiredAmount.replace(/,/g, "")));
 
                   const answer1 =
                     Number(selectedDesiredAmount.replace(/,/g, "")) *
-                    parseFloat(selectedStatus);
+                    percentage;
                   const answer2 =
                     Number(selectedDesiredAmount.replace(/,/g, "")) /
-                    parseFloat(selectedLoanDuration);
+                    selectedLoanDuration;
 
                   const perMonth = answer1 + answer2;
 
