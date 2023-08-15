@@ -164,7 +164,7 @@ export default function BasicTabs() {
           <li>2 valid Goverment ID's with 3 signature segments</li>
           <li>DTI and Business Permit</li>
           <li>
-            6 months passbook account or 6 months bank certificate with HDB
+            6 months passbook account or 6 months bank certificate with ADB
             (with letter of authority) for Bank checking
           </li>
           <li>List of suppliers / Customers</li>

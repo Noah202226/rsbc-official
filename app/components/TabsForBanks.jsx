@@ -199,8 +199,8 @@ export default function TabsForBanks() {
           <ul className="qualifications">
             <li>Business existing for atleast 3yrs (if trading 5yrs)</li>
             <li>
-              Credit Card holder with good credit history or any loan history
-              with the bank for references
+              Good credit history or any loan history with the bank for
+              references
             </li>
             <li>Monthly income of Business atleast 50k a month</li>
           </ul>
@@ -228,12 +228,12 @@ export default function TabsForBanks() {
             <li>2 valid Goverment ID's with 3 signature segments</li>
             <li>DTI and Business Permit</li>
             <li>
-              6 months passbook account or 6 months bank certificate with HDB
-              (with letter of authority) for Bank checking
+              3 months passbook account or 3 months bank certificate with ADB
+              (with authorization letter) for Bank checking
             </li>
             <li>List of suppliers / Customers</li>
             <li>Photos and Signage of Business</li>
-            <li>ITR with AFS upon 2021 and 2022 or 3 months payslip</li>
+            <li>AFS upon 2021 and 2022</li>
           </ul>
         </Stack>
       </CustomTabPanel>
@@ -370,12 +370,12 @@ export default function TabsForBanks() {
             <li>2 valid Goverment ID's with 3 signature segments</li>
             <li>DTI and Business Permit</li>
             <li>
-              6 months passbook account or 6 months bank certificate with HDB
-              (with letter of authority) for Bank checking
+              3 months passbook account (with authorization letter) for Bank
+              checking
             </li>
             <li>List of suppliers / Customers</li>
             <li>Photos and Signage of Business</li>
-            <li>ITR with AFS upon 2021 and 2022 or 3 months payslip</li>
+            <li>AFS upon 2021 and 2022</li>
           </ul>
         </Stack>
       </CustomTabPanel>
