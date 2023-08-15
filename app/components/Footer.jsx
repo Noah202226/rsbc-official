@@ -97,6 +97,46 @@ const Footer = ({
                 </Typography>
               </Stack>
             </Link>
+
+            <Link href={"mailto:rsbcprimesmarketing@gmail.com"} target="_blank">
+              <Stack
+                flexDirection={"row"}
+                alignItems={"center"}
+                justifyContent={"start"}
+                sx={{
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, rgba(2,100,0,1) 10%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
+                    color: "cyan",
+                  },
+                }}
+              >
+                <EmailOutlined />
+                <Typography variant="body" ml={1} fontSize={{ xs: 12, md: 16 }}>
+                  rsbcprimesmarketing@gmail.com
+                </Typography>
+              </Stack>
+            </Link>
+
+            <Link href={"https://rsbc-marketing.vercel.app/"} target="_blank">
+              <Stack
+                flexDirection={"row"}
+                alignItems={"center"}
+                justifyContent={"start"}
+                sx={{
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, rgba(2,100,0,1) 10%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
+                    color: "cyan",
+                  },
+                }}
+              >
+                <Language />
+                <Typography variant="body" ml={1} fontSize={{ xs: 12, md: 16 }}>
+                  RSBC OFFICIAL WEBSITE
+                </Typography>
+              </Stack>
+            </Link>
           </Stack>
         </Grid>
 
