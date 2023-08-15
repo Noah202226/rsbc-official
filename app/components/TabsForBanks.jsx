@@ -94,11 +94,7 @@ export default function TabsForBanks() {
         flexDirection={"row"}
         alignItems={"center"}
         justifyContent={"space-evenly"}
-        sx={{
-          background:
-            "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
-          width: { xs: "100%", md: "50%" },
-        }}
+        sx={{ background: "rgba(250,0,0,1)", width: { xs: "100%", md: "50%" } }}
         borderRadius={2}
       >
         <Typography
@@ -113,6 +109,174 @@ export default function TabsForBanks() {
         </Typography>
 
         <Image src={"/bank.png"} alt="banks" width={50} height={50} />
+      </Stack>
+
+      <Stack
+        flexDirection={"row"}
+        alignItems={"center"}
+        justifyContent={"space-around"}
+        my={5}
+        className="card"
+      >
+        <Image
+          className="bank-logos"
+          src={"/rsbc.jpg"}
+          alt="security-bank-logo"
+          width={100}
+          height={100}
+        />
+        <Image
+          className="bank-logos"
+          src={"/east-west.jpg"}
+          alt="east-west-logo"
+          width={100}
+          height={100}
+        />
+        <Image
+          className="bank-logos"
+          src={"/security-bank.jpg"}
+          alt="security-bank-logo"
+          width={100}
+          height={100}
+        />
+      </Stack>
+
+      <Typography
+        variant="h2"
+        fontSize={{ xs: 18, md: 28 }}
+        color={"white"}
+        textAlign={"center"}
+        sx={{
+          background:
+            "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
+          width: { xs: "100%", md: "50%" },
+        }}
+        borderRadius={2}
+        my={{ xs: 2, md: 3 }}
+      >
+        Qualifications for Employed Applicants:
+      </Typography>
+
+      <Stack mx={4}>
+        <ul className="qualifications">
+          <li>Regular Employee (with atleast 6 months regular status)</li>
+          <li>
+            Basic Income should be 15k/Bankers, 20k/Private companies and
+            25k/Call center
+          </li>
+          <li>With good credit history</li>
+        </ul>
+
+        <Typography
+          variant="caption"
+          fontStyle={"italic"}
+          color={"orangered"}
+          textAlign={"left"}
+        >
+          For Security Bank - Call center atleast 50k monthly basic
+        </Typography>
+      </Stack>
+
+      <Typography
+        variant="h2"
+        fontSize={{ xs: 18, md: 28 }}
+        color={"white"}
+        textAlign={"center"}
+        sx={{
+          background:
+            "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
+          width: { xs: "100%", md: "50%" },
+        }}
+        borderRadius={2}
+        my={{ xs: 2, md: 3 }}
+      >
+        Qualifications for Self Employed Applicants:
+      </Typography>
+
+      <Stack mx={4}>
+        <ul className="qualifications">
+          <li>Business existing for atleast 3yrs (if trading 5yrs)</li>
+          <li>
+            Credit Card holder with good credit history or any loan history with
+            the bank for references
+          </li>
+          <li>Monthly income of Business atleast 50k a month</li>
+        </ul>
+      </Stack>
+      <br />
+      <br />
+      <Typography
+        variant="h2"
+        fontSize={{ xs: 18, md: 28 }}
+        color={"white"}
+        textAlign={"center"}
+        sx={{
+          background:
+            "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
+          width: { xs: "100%", md: "50%" },
+        }}
+        borderRadius={2}
+        my={{ xs: 2, md: 3 }}
+      >
+        Requirements for Employed Applicants:
+      </Typography>
+
+      <Stack mx={4}>
+        <ul className="qualifications">
+          <li>Fill up application form</li>
+          <li>Company ID + Goverment ID</li>
+          <li>Latest one month payslip and Latest COE</li>
+          <li>Latest POB</li>
+        </ul>
+
+        <Typography
+          variant="caption"
+          fontStyle={"italic"}
+          color={"orangered"}
+          textAlign={"left"}
+        >
+          For Eastwest ITR or 3 months payslip
+        </Typography>
+      </Stack>
+
+      <Typography
+        variant="h2"
+        fontSize={{ xs: 18, md: 28 }}
+        color={"white"}
+        textAlign={"center"}
+        sx={{
+          background:
+            "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
+          width: { xs: "100%", md: "50%" },
+        }}
+        borderRadius={2}
+        my={{ xs: 2, md: 3 }}
+      >
+        Requirements for Self Employed Applicants:
+      </Typography>
+
+      <Stack mx={4}>
+        <ul className="qualifications">
+          <li>Fill up application form and DPA Form</li>
+          <li>2 valid Goverment ID's with 3 signature segments</li>
+          <li>DTI and Business Permit</li>
+          <li>
+            6 months passbook account or 6 months bank certificate with HDB
+            (with letter of authority) for Bank checking
+          </li>
+          <li>List of suppliers / Customers</li>
+          <li>Photos and Signage of Business</li>
+        </ul>
+
+        <Typography
+          variant="caption"
+          fontStyle={"italic"}
+          color={"orangered"}
+          textAlign={"left"}
+        >
+          For Eastwest and Security, ITR with AFS upon 2021 and 2022 or 3 months
+          payslip
+        </Typography>
       </Stack>
 
       <Box sx={{ borderBottom: 1, borderColor: "divider" }} className="card">
@@ -297,165 +461,6 @@ export default function TabsForBanks() {
           Note: All documents submitted/presented must be under the name of the
           applicant (correct spelling; include suffix if applicable).
         </Typography>
-
-        {/* Tables for more details */}
-
-        <Grid container spacing={2} sx={{ mt: { xs: 2, md: 2 } }}>
-          <Grid item xs={12} md={6}>
-            <h3>Fees and Charges</h3>
-            <table className="custom-table ">
-              <tbody>
-                {data.map((item) => (
-                  <tr key={item.id}>
-                    <td>{item.fees}</td>
-                    <td>{item.amount}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-            <Grid item xs={12}>
-              <h3>PL RATES</h3>
-              <table className="custom-table">
-                <thead>
-                  <tr>
-                    <th colSpan={5}>
-                      <h4>With Existing Credit Card for at least 9 months</h4>
-                    </th>
-                  </tr>
-                  <tr>
-                    <th style={{ width: "auto" }}>
-                      <h4>Tenor</h4>
-                    </th>
-                    <th style={{ width: "auto" }}>
-                      <h4>Monthly Rate</h4>
-                    </th>
-                    <th style={{ width: "auto" }}>
-                      <h4>Factor Rate</h4>
-                    </th>
-                    <th style={{ width: "auto" }}>
-                      <h4>Contructual Interest Rate</h4>
-                    </th>
-                    <th style={{ width: "auto" }}>
-                      <h4>Effective Interest Rate</h4>
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td>2 months</td>
-                    <td>1.49%</td>
-                    <td>0.0982333</td>
-                    <td>31.51% p.a.</td>
-                    <td>41.67% p.a.</td>
-                  </tr>
-
-                  <tr>
-                    <td>18 months</td>
-                    <td>1.59%</td>
-                    <td>0.0714556</td>
-                    <td>33.54% p.a.</td>
-                    <td>42.93% p.a.</td>
-                  </tr>
-
-                  <tr>
-                    <td>24 months</td>
-                    <td>1.59%</td>
-                    <td>0.0575667</td>
-                    <td>33.19% p.a.</td>
-                    <td>41.62% p.a.</td>
-                  </tr>
-
-                  <tr>
-                    <td>36 months</td>
-                    <td>1.69%</td>
-                    <td>0.0446778</td>
-                    <td>34.01% p.a.</td>
-                    <td>41.94% p.a.</td>
-                  </tr>
-                </tbody>
-
-                <thead>
-                  <tr>
-                    <th colSpan={5}>
-                      <h4>
-                        Without Credit Card I With Credit Card less than 9
-                        months
-                      </h4>
-                    </th>
-                  </tr>
-                  <tr>
-                    <th style={{ width: "auto" }}>
-                      <h4>Tenor</h4>
-                    </th>
-                    <th style={{ width: "auto" }}>
-                      <h4>Monthly Rate</h4>
-                    </th>
-                    <th style={{ width: "auto" }}>
-                      <h4>Factor Rate</h4>
-                    </th>
-                    <th style={{ width: "auto" }}>
-                      <h4>Contructual Interest Rate</h4>
-                    </th>
-                    <th style={{ width: "auto" }}>
-                      <h4>Effective Interest Rate</h4>
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td>2 months</td>
-                    <td>1.89%</td>
-                    <td>0.1022333</td>
-                    <td>39.53% p.a.</td>
-                    <td>53.21% p.a</td>
-                  </tr>
-
-                  <tr>
-                    <td>18 months</td>
-                    <td>1.89%</td>
-                    <td>0.0744556</td>
-                    <td>39.39% p.a.</td>
-                    <td>51.33% p.a.</td>
-                  </tr>
-
-                  <tr>
-                    <td>24 months</td>
-                    <td>1.89%</td>
-                    <td>0.0605667</td>
-                    <td>38.85% p.a.</td>
-                    <td>49.68% p.a.</td>
-                  </tr>
-
-                  <tr>
-                    <td>36 months</td>
-                    <td>1.89%</td>
-                    <td>0.0466778</td>
-                    <td>37.53% p.a.</td>
-                    <td>46.92% p.a.</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <span
-                style={{
-                  color: "orangered",
-                  fontStyle: "italic",
-                  textAlign: "end",
-                  fontSize: 12,
-                }}
-              >
-                * See table on Fees and Charges for the definition. Effective
-                Interest Rates in the above table are computed based on a Loan
-                Amount of Php100,000 and Processing Fee of Php1,900.
-              </span>
-            </Grid>
-          </Grid>
-        </Grid>
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={2}>

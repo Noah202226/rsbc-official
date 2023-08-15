@@ -328,11 +328,15 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
                     onChange={(e) => setStatus(e.target.value)}
                   >
                     <MenuItem value={"self-employed"}>
-                      Self Employed (1.49%)
+                      Self Employed (1.49% - 1.99%)
                     </MenuItem>
-                    <MenuItem value={"employed"}>Employed (1.49%) </MenuItem>
+                    <MenuItem value={"employed"}>
+                      Employed (1.49% - 1.99%)
+                    </MenuItem>
+                    <MenuItem value={"bankers"}>
+                      Bankers (1.49% - 1.99%)
+                    </MenuItem>
                     <MenuItem value={"doctors"}>Doctors (1.39%)</MenuItem>
-                    <MenuItem value={"bankers"}>Bankers (1.39%)</MenuItem>
                   </Select>
                 </FormControl>
 
@@ -342,7 +346,7 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
                   required
                 >
                   <InputLabel id="demo-simple-select-label">
-                    Loan duration
+                    Loan term
                   </InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
@@ -367,6 +371,15 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
                 sx={{ mb: 1 }}
                 disabled
               />
+
+              <Typography
+                variant="caption"
+                fontStyle={"italic"}
+                color={"orangered"}
+                textAlign={"right"}
+              >
+                Note: (1.49% - 1.99%) is computed at 1.49%
+              </Typography>
 
               <TextField
                 type="hidden"

@@ -38,6 +38,9 @@ body::-webkit-scrollbar-thumb:hover {
 ul {
   list-style: none;
 }
+ul.qualifications {
+  list-style: square;
+}
 
 a {
   color: white;
@@ -293,6 +296,10 @@ dialog {
 .custom-table td {
   border: 1px solid #ccc;
   padding: 8px;
+}
+
+.bank-logos {
+  border-radius: 50% !important;
 }
 
 /* Media query for mobile devices */

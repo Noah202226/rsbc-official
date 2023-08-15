@@ -1,4 +1,13 @@
 "use client";
+import {
+  EmailOutlined,
+  Language,
+  ReportGmailerrorredSharp,
+  SignalWifi3BarOutlined,
+  WebAsset,
+  WebRounded,
+  WebStories,
+} from "@mui/icons-material";
 import Facebook from "@mui/icons-material/Facebook";
 import Instagram from "@mui/icons-material/Instagram";
 import Youtube from "@mui/icons-material/YouTube";
@@ -30,18 +39,17 @@ const Footer = ({
           <Typography variant="h4">{footerTitle}</Typography>
 
           <Stack>
-            <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
-              {footerEmail}
-              <br />
-              {footerContact}
-            </Typography>
+            <Typography variant="h6">Office Address</Typography>
 
-            <br />
             <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
+              Makati Office:
+              <br />
               {footerAddress1}
             </Typography>
             <br />
             <Typography variant="body" fontSize={{ xs: 12, md: 16 }}>
+              Bulacan Office:
+              <br />
               {footerAddress2}
             </Typography>
           </Stack>
@@ -89,6 +97,46 @@ const Footer = ({
                 </Typography>
               </Stack>
             </Link>
+
+            <Link href={"mailto:rsbcprimesmarketing@gmail.com"} target="_blank">
+              <Stack
+                flexDirection={"row"}
+                alignItems={"center"}
+                justifyContent={"start"}
+                sx={{
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, rgba(2,100,0,1) 10%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
+                    color: "cyan",
+                  },
+                }}
+              >
+                <EmailOutlined />
+                <Typography variant="body" ml={1} fontSize={{ xs: 12, md: 16 }}>
+                  rsbcprimesmarketing@gmail.com
+                </Typography>
+              </Stack>
+            </Link>
+
+            <Link href={"https://rsbc-official.vercel.app/"} target="_blank">
+              <Stack
+                flexDirection={"row"}
+                alignItems={"center"}
+                justifyContent={"start"}
+                sx={{
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, rgba(2,100,0,1) 10%, rgba(255,0,0,1) 100%)", // Replace with your desired gradient on hover
+                    color: "cyan",
+                  },
+                }}
+              >
+                <Language />
+                <Typography variant="body" ml={1} fontSize={{ xs: 12, md: 16 }}>
+                  https://rsbc-official.vercel.app/
+                </Typography>
+              </Stack>
+            </Link>
           </Stack>
         </Grid>
 
@@ -97,11 +145,15 @@ const Footer = ({
 
           <Stack>
             <Typography fontSize={{ xs: 12, md: 16 }}>
-              OFFICE DAYS: <br /> Monday - Friday: 9:00 am - 5:00 pm
+              Monday - Friday: 9:00 am - 5:00 pm
             </Typography>
 
+            <br />
             <Typography fontSize={{ xs: 12, md: 16 }}>
-              FOR INQUIRIES : <br /> Saturday: 10:00 am - 6:00 pm
+              FOR INQUIRIES :
+              <br />
+              (044) 761 6053 / 09285212840
+              <br /> Monday - Saturday: 10:00 am - 6:00 pm
             </Typography>
           </Stack>
         </Grid>
@@ -110,8 +162,8 @@ const Footer = ({
       <Typography
         variant="body2"
         textAlign={"center"}
-        mt={2}
-        fontSize={{ xs: 12, md: 14 }}
+        mt={3}
+        fontSize={{ xs: 11, md: 16 }}
       >
         RSBC BULACAN PRIMES MARKETING CONSULTING - 2023 All rights reserved.
       </Typography>

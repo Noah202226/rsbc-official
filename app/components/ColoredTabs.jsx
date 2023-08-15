@@ -66,7 +66,7 @@ export default function BasicTabs() {
           }}
           borderRadius={2}
         >
-          Loan Types
+          Doctors Loan
         </Typography>
         <Image
           src={"/rsbc.jpg"}
@@ -82,41 +82,139 @@ export default function BasicTabs() {
           aria-label="basic tabs example"
         >
           <Tab
-            label="Salary Loan"
+            label="Employed Doctors"
             {...a11yProps(0)}
-            sx={{ fontSize: { xs: 12, md: 26 }, textTransform: "capitalize" }}
+            sx={{ fontSize: { xs: 12, md: 24 }, textTransform: "capitalize" }}
           />
           <Tab
-            label="Doctors Loan"
+            label="Self Employed (Consultant)"
             {...a11yProps(1)}
-            sx={{ fontSize: { xs: 12, md: 26 }, textTransform: "capitalize" }}
-          />
-          <Tab
-            label="Bankers Loan"
-            {...a11yProps(2)}
-            sx={{ fontSize: { xs: 12, md: 26 }, textTransform: "capitalize" }}
+            sx={{ fontSize: { xs: 12, md: 24 }, textTransform: "capitalize" }}
           />
         </Tabs>
       </Box>
       <CustomTabPanel value={value2} index={0}>
-        <CustomizedAccordions />
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background:
+              "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          Qualifications
+        </Typography>
+
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>Atleast 2 yrs License as Doctors</li>
+            {/* <li>
+              Basic Income should be 15k/Bankers, 20k/Private companies and
+              25k/Call center
+            </li>
+            <li>With good credit history</li> */}
+          </ul>
+
+          {/* <Typography
+            variant="caption"
+            fontStyle={"italic"}
+            color={"orangered"}
+            textAlign={"left"}
+          >
+            For Security Bank - Call center atleast 50k monthly basic
+          </Typography> */}
+        </Stack>
+
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background:
+              "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          Requirements for Employed Applicants:
+        </Typography>
+
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>PRC ID and Hospital ID</li>
+            <li>Latest one month payslip</li>
+          </ul>
+        </Stack>
       </CustomTabPanel>
       <CustomTabPanel value={value2} index={1}>
-        <CustomizedAccordionsForDoctors />
         <Typography
-          variant="body"
-          color={"orangered"}
-          fontStyle={"italic"}
-          textAlign={"end"}
-          sx={{ textAlign: "right" }}
-          my={2}
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background:
+              "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
         >
-          Notes* for doctors loan, we don't have a 12 month term to pay, you
-          could choose either 18 months to 3 years instead.
+          Qualifications
         </Typography>
-      </CustomTabPanel>
-      <CustomTabPanel value={value2} index={2}>
-        <CustomizedAccordionsForBankers />
+
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>Atleast 2 yrs License as Doctors and operating clinic</li>
+            {/* <li>
+              Basic Income should be 15k/Bankers, 20k/Private companies and
+              25k/Call center
+            </li>
+            <li>With good credit history</li> */}
+          </ul>
+
+          {/* <Typography
+            variant="caption"
+            fontStyle={"italic"}
+            color={"orangered"}
+            textAlign={"left"}
+          >
+            For Security Bank - Call center atleast 50k monthly basic
+          </Typography> */}
+        </Stack>
+
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background:
+              "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          Requirements for Employed Applicants:
+        </Typography>
+
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>PRC ID and 1 valid Government ID with 3 signature</li>
+            <li>
+              3 months passbook savings account with letter or authority for
+              bank checking
+            </li>
+          </ul>
+        </Stack>
       </CustomTabPanel>
     </Box>
   );
