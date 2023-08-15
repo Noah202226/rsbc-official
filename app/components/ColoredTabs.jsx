@@ -51,6 +51,130 @@ export default function BasicTabs() {
       <Stack
         flexDirection={{ xs: "column", md: "row" }}
         alignItems={"flex-end"}
+        justifyContent={"flex-end"}
+      >
+        <Image
+          src={"/rsbc.jpg"}
+          alt="east-west-logo"
+          width={100}
+          height={100}
+        />
+      </Stack>
+
+      <Typography
+        variant="h2"
+        fontSize={{ xs: 18, md: 28 }}
+        color={"white"}
+        textAlign={"center"}
+        sx={{
+          background:
+            "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
+          width: { xs: "100%", md: "50%" },
+        }}
+        borderRadius={2}
+        my={{ xs: 2, md: 3 }}
+      >
+        Qualifications for Employed Applicants:
+      </Typography>
+
+      <Stack mx={4}>
+        <ul className="qualifications">
+          <li>Regular Employee (with atleast 6 months regular status)</li>
+          <li>
+            Basic Income should be 15k/Bankers, 20k/Private companies and
+            25k/Call center
+          </li>
+          <li>With good credit history</li>
+        </ul>
+      </Stack>
+
+      <Typography
+        variant="h2"
+        fontSize={{ xs: 18, md: 28 }}
+        color={"white"}
+        textAlign={"center"}
+        sx={{
+          background:
+            "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
+          width: { xs: "100%", md: "50%" },
+        }}
+        borderRadius={2}
+        my={{ xs: 2, md: 3 }}
+      >
+        Qualifications for Self Employed Applicants:
+      </Typography>
+
+      <Stack mx={4}>
+        <ul className="qualifications">
+          <li>Business existing for atleast 3yrs (if trading 5yrs)</li>
+          <li>
+            Credit Card holder with good credit history or any loan history with
+            the bank for references
+          </li>
+          <li>Monthly income of Business atleast 50k a month</li>
+        </ul>
+      </Stack>
+
+      <br />
+      <br />
+      <Typography
+        variant="h2"
+        fontSize={{ xs: 18, md: 28 }}
+        color={"white"}
+        textAlign={"center"}
+        sx={{
+          background:
+            "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
+          width: { xs: "100%", md: "50%" },
+        }}
+        borderRadius={2}
+        my={{ xs: 2, md: 3 }}
+      >
+        Requirements for Employed Applicants:
+      </Typography>
+
+      <Stack mx={4}>
+        <ul className="qualifications">
+          <li>Fill up application form</li>
+          <li>Company ID + Goverment ID</li>
+          <li>Latest one month payslip and Latest COE</li>
+          <li>Latest POB</li>
+        </ul>
+      </Stack>
+
+      <Typography
+        variant="h2"
+        fontSize={{ xs: 18, md: 28 }}
+        color={"white"}
+        textAlign={"center"}
+        sx={{
+          background:
+            "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
+          width: { xs: "100%", md: "50%" },
+        }}
+        borderRadius={2}
+        my={{ xs: 2, md: 3 }}
+      >
+        Requirements for Self Employed Applicants:
+      </Typography>
+
+      <Stack mx={4}>
+        <ul className="qualifications">
+          <li>Fill up application form and DPA Form</li>
+          <li>2 valid Goverment ID's with 3 signature segments</li>
+          <li>DTI and Business Permit</li>
+          <li>
+            6 months passbook account or 6 months bank certificate with HDB
+            (with letter of authority) for Bank checking
+          </li>
+          <li>List of suppliers / Customers</li>
+          <li>Photos and Signage of Business</li>
+        </ul>
+      </Stack>
+
+      <Stack
+        flexDirection={{ xs: "column", md: "row" }}
+        alignItems={"flex-end"}
         justifyContent={"space-between"}
       >
         <Typography

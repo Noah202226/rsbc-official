@@ -111,175 +111,10 @@ export default function TabsForBanks() {
         <Image src={"/bank.png"} alt="banks" width={50} height={50} />
       </Stack>
 
-      <Stack
-        flexDirection={"row"}
-        alignItems={"center"}
-        justifyContent={"space-around"}
-        my={5}
+      <Box
+        sx={{ borderBottom: 1, borderColor: "divider", my: 2 }}
         className="card"
       >
-        <Image
-          className="bank-logos"
-          src={"/rsbc.jpg"}
-          alt="security-bank-logo"
-          width={100}
-          height={100}
-        />
-        <Image
-          className="bank-logos"
-          src={"/east-west.jpg"}
-          alt="east-west-logo"
-          width={100}
-          height={100}
-        />
-        <Image
-          className="bank-logos"
-          src={"/security-bank.jpg"}
-          alt="security-bank-logo"
-          width={100}
-          height={100}
-        />
-      </Stack>
-
-      <Typography
-        variant="h2"
-        fontSize={{ xs: 18, md: 28 }}
-        color={"white"}
-        textAlign={"center"}
-        sx={{
-          background:
-            "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
-          width: { xs: "100%", md: "50%" },
-        }}
-        borderRadius={2}
-        my={{ xs: 2, md: 3 }}
-      >
-        Qualifications for Employed Applicants:
-      </Typography>
-
-      <Stack mx={4}>
-        <ul className="qualifications">
-          <li>Regular Employee (with atleast 6 months regular status)</li>
-          <li>
-            Basic Income should be 15k/Bankers, 20k/Private companies and
-            25k/Call center
-          </li>
-          <li>With good credit history</li>
-        </ul>
-
-        <Typography
-          variant="caption"
-          fontStyle={"italic"}
-          color={"orangered"}
-          textAlign={"left"}
-        >
-          For Security Bank - Call center atleast 50k monthly basic
-        </Typography>
-      </Stack>
-
-      <Typography
-        variant="h2"
-        fontSize={{ xs: 18, md: 28 }}
-        color={"white"}
-        textAlign={"center"}
-        sx={{
-          background:
-            "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
-          width: { xs: "100%", md: "50%" },
-        }}
-        borderRadius={2}
-        my={{ xs: 2, md: 3 }}
-      >
-        Qualifications for Self Employed Applicants:
-      </Typography>
-
-      <Stack mx={4}>
-        <ul className="qualifications">
-          <li>Business existing for atleast 3yrs (if trading 5yrs)</li>
-          <li>
-            Credit Card holder with good credit history or any loan history with
-            the bank for references
-          </li>
-          <li>Monthly income of Business atleast 50k a month</li>
-        </ul>
-      </Stack>
-      <br />
-      <br />
-      <Typography
-        variant="h2"
-        fontSize={{ xs: 18, md: 28 }}
-        color={"white"}
-        textAlign={"center"}
-        sx={{
-          background:
-            "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
-          width: { xs: "100%", md: "50%" },
-        }}
-        borderRadius={2}
-        my={{ xs: 2, md: 3 }}
-      >
-        Requirements for Employed Applicants:
-      </Typography>
-
-      <Stack mx={4}>
-        <ul className="qualifications">
-          <li>Fill up application form</li>
-          <li>Company ID + Goverment ID</li>
-          <li>Latest one month payslip and Latest COE</li>
-          <li>Latest POB</li>
-        </ul>
-
-        <Typography
-          variant="caption"
-          fontStyle={"italic"}
-          color={"orangered"}
-          textAlign={"left"}
-        >
-          For Eastwest ITR or 3 months payslip
-        </Typography>
-      </Stack>
-
-      <Typography
-        variant="h2"
-        fontSize={{ xs: 18, md: 28 }}
-        color={"white"}
-        textAlign={"center"}
-        sx={{
-          background:
-            "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
-          width: { xs: "100%", md: "50%" },
-        }}
-        borderRadius={2}
-        my={{ xs: 2, md: 3 }}
-      >
-        Requirements for Self Employed Applicants:
-      </Typography>
-
-      <Stack mx={4}>
-        <ul className="qualifications">
-          <li>Fill up application form and DPA Form</li>
-          <li>2 valid Goverment ID's with 3 signature segments</li>
-          <li>DTI and Business Permit</li>
-          <li>
-            6 months passbook account or 6 months bank certificate with HDB
-            (with letter of authority) for Bank checking
-          </li>
-          <li>List of suppliers / Customers</li>
-          <li>Photos and Signage of Business</li>
-        </ul>
-
-        <Typography
-          variant="caption"
-          fontStyle={"italic"}
-          color={"orangered"}
-          textAlign={"left"}
-        >
-          For Eastwest and Security, ITR with AFS upon 2021 and 2022 or 3 months
-          payslip
-        </Typography>
-      </Stack>
-
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }} className="card">
         <Tabs
           value={value}
           onChange={handleChange}
@@ -313,24 +148,8 @@ export default function TabsForBanks() {
         <Stack
           flexDirection={{ xs: "column", md: "row" }}
           alignItems={"flex-end"}
-          justifyContent={"space-between"}
+          justifyContent={"flex-end"}
         >
-          <Typography
-            order={{ xs: 1, md: 0 }}
-            my={{ xs: 2, md: 1 }}
-            variant="h2"
-            fontSize={{ xs: 18, md: 28 }}
-            color={"white"}
-            textAlign={"center"}
-            sx={{
-              background: "rgba(178,0,111,1)",
-              width: { xs: "100%", md: "30%" },
-            }}
-            borderRadius={2}
-          >
-            Application Requirements
-          </Typography>
-
           <Image
             src={"/east-west.jpg"}
             alt="east-west-logo"
@@ -339,24 +158,33 @@ export default function TabsForBanks() {
           />
         </Stack>
 
-        <Typography>
-          • Must be a Filipino citizen or Foreign National permanently residing
-          in the Philippines.
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background:
+              "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          Qualifications for Employed Applicants:
         </Typography>
-        <Typography>
-          • Must be at least 21 years old during application and not more than
-          65 years old upon loan maturity Must have at least one fixed landline
-          number (either home or business) and a mobile number. (Mobile number
-          will not be accepted as a stand-alone contact number)
-        </Typography>
-        <Typography>
-          • Gross (basic) monthly income (GMI) must be at least Phpl5,000 or
-          basic annual income or must not be less than Php180,000
-        </Typography>
-        <Typography>
-          • Atleast 20k and then annual gross income is 240k
-        </Typography>
-        <Typography>• Non- Carded or no Credit card is Accepted</Typography>
+
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>Regular Employee (with atleast 6 months regular status)</li>
+            <li>
+              Basic Income should be 15k/Bankers, 20k/Private companies and
+              25k/Call center
+            </li>
+            <li>With good credit history</li>
+            <li>Call center atleast 50k monthly basic</li>
+          </ul>
+        </Stack>
 
         <Typography
           variant="h2"
@@ -364,31 +192,54 @@ export default function TabsForBanks() {
           color={"white"}
           textAlign={"center"}
           sx={{
-            background: "rgba(178,0,111,1)",
-            width: { xs: "100%", md: "30%" },
+            background:
+              "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
           }}
           borderRadius={2}
           my={{ xs: 2, md: 3 }}
         >
-          Documentary Requirements
+          Qualifications for Self Employed Applicants:
         </Typography>
 
-        <Typography>
-          • Completely filled-out EastWest Personal Loan Application Form
-          Photocopy of at least one (1) valid digitized photo-bearing and
-          signature-bearing 1.0.'s issued in the Philippines (i.e. Driver's
-          License, Philippine Passport, Professional Regulation Commission (PRC)
-          I.D .. 555 I.D .. TIN I.D .. Integrated Bar of the Philippines I.D ..
-          and Unified 555/GSIS and TIN 1.0. (UMID). Company 1.0.'s issued by
-          private entities or institutions registered with or supervised or
-          regulated either by the BSP. SEC or IC may also be submitted.
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>Business existing for atleast 3yrs (if trading 5yrs)</li>
+            <li>
+              Credit Card holder with good credit history or any loan history
+              with the bank for references
+            </li>
+            <li>Monthly income of Business atleast 50k a month</li>
+          </ul>
+        </Stack>
+
+        <br />
+        <br />
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background:
+              "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          Requirements for Employed Applicants:
         </Typography>
-        <Typography>
-          • (For Foreign Nationals Only) ANY of the following Proof of
-          Residence: Alien Certificate of Registration, Immigrant Certificate of
-          Registration or Photocopy of Resident Visa stamp on Passport
-        </Typography>
-        <Typography>• Proof of Income as follows:</Typography>
+
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>Fill up application form</li>
+            <li>Company ID + Goverment ID</li>
+            <li>Latest one month payslip and Latest COE</li>
+            <li>Latest POB</li>
+            <li>ITR or 3 months payslip</li>
+          </ul>
+        </Stack>
 
         <Typography
           variant="h2"
@@ -396,95 +247,38 @@ export default function TabsForBanks() {
           color={"white"}
           textAlign={"center"}
           sx={{
-            background: "rgba(178,0,111,1)",
-            width: { xs: "100%", md: "45%" },
+            background:
+              "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
           }}
           borderRadius={2}
           my={{ xs: 2, md: 3 }}
         >
-          If employed, submit ANY of the following:
-        </Typography>
-        <Typography>• Photocopy of latest ITR/BIR Form 2316; or </Typography>
-        <Typography>
-          • Photocopy of latest three months pay slips; or
-        </Typography>
-        <Typography>
-          • Valid Credit Card reference or its latest Credit Card Statement of
-          Account
-        </Typography>
-        <Typography>
-          • Other documents that may be required for further verification such
-          as Certificate of Employment stating salary, status
-          (regular/probationary/contractual/co-terminus etc.) position, and
-          tenure of employment; and/or Proof of Billing
+          Requirements for Self Employed Applicants:
         </Typography>
 
-        <Typography
-          variant="h2"
-          fontSize={{ xs: 18, md: 28 }}
-          color={"white"}
-          textAlign={"center"}
-          sx={{
-            background: "rgba(178,0,111,1)",
-            width: { xs: "100%", md: "45%" },
-          }}
-          borderRadius={2}
-          my={{ xs: 2, md: 3 }}
-        >
-          If self-employed, submit ALL of the following:
-        </Typography>
-        <Typography>
-          • Photocopy of latest ITR/BIR Form 1701 and Audited Financial
-          Statements
-        </Typography>
-        <Typography>
-          • DTI Registration Certificate (for Sole Proprietorship) or SEC
-          Registration Certificate with page stating shares owned by the
-          applicant (for Partnerships or Corporations)
-        </Typography>
-        <Typography>
-          • Valid Credit Card reference or its latest Credit Card Statement of
-          Account
-        </Typography>
-        <Typography>
-          • Other documents that may be required for further verification such
-          as Business Permit or Mayor's Permit
-        </Typography>
-        <Typography
-          variant="body"
-          color={"orangered"}
-          fontStyle={"italic"}
-          textAlign={"end"}
-          sx={{ textAlign: "right" }}
-          my={2}
-        >
-          Note: All documents submitted/presented must be under the name of the
-          applicant (correct spelling; include suffix if applicable).
-        </Typography>
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>Fill up application form and DPA Form</li>
+            <li>2 valid Goverment ID's with 3 signature segments</li>
+            <li>DTI and Business Permit</li>
+            <li>
+              6 months passbook account or 6 months bank certificate with HDB
+              (with letter of authority) for Bank checking
+            </li>
+            <li>List of suppliers / Customers</li>
+            <li>Photos and Signage of Business</li>
+            <li>ITR with AFS upon 2021 and 2022 or 3 months payslip</li>
+          </ul>
+        </Stack>
       </CustomTabPanel>
 
       <CustomTabPanel value={value} index={2}>
         <Stack
           flexDirection={{ xs: "column", md: "row" }}
           alignItems={"flex-end"}
-          justifyContent={"space-between"}
+          justifyContent={"flex-end"}
         >
-          <Typography
-            order={{ xs: 1, md: 0 }}
-            my={{ xs: 2, md: 1 }}
-            variant="h2"
-            fontSize={{ xs: 18, md: 28 }}
-            color={"white"}
-            textAlign={"center"}
-            sx={{
-              background: "rgba(44,59,85,1)",
-              width: { xs: "100%", md: "30%" },
-            }}
-            borderRadius={2}
-          >
-            Are You Qualified?
-          </Typography>
-
           <Stack alignItems={"center"}>
             <Image
               src={"/security-bank.jpg"}
@@ -506,20 +300,32 @@ export default function TabsForBanks() {
           </Stack>
         </Stack>
 
-        <Typography>
-          • Must be a Filipino citizen or Foreign National permanently residing
-          in the Philippines.
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background:
+              "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          Qualifications for Employed Applicants:
         </Typography>
-        <Typography>
-          • Must be at least 21 years old during application and not more than
-          65 years old upon loan maturity Must have at least one fixed landline
-          number (either home or business) and a mobile number. (Mobile number
-          will not be accepted as a stand-alone contact number)
-        </Typography>
-        <Typography>
-          • Gross (basic) monthly income (GMI) must be at least Phpl5,000 or
-          basic annual income or must not be less than Php180,000
-        </Typography>
+
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>Regular Employee (with atleast 6 months regular status)</li>
+            <li>
+              Basic Income should be 15k/Bankers, 20k/Private companies and
+              25k/Call center
+            </li>
+            <li>With good credit history</li>
+          </ul>
+        </Stack>
 
         <Typography
           variant="h2"
@@ -527,28 +333,54 @@ export default function TabsForBanks() {
           color={"white"}
           textAlign={"center"}
           sx={{
-            background: "rgba(44,59,85,1)",
-            width: { xs: "100%", md: "30%" },
+            background:
+              "linear-gradient(-90deg, rgba(0,120,0,1) 10%, rgba(5,80,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
           }}
           borderRadius={2}
           my={{ xs: 2, md: 3 }}
         >
-          DOCUMENTARY REQUIREMENTS
+          Qualifications for Self Employed Applicants:
         </Typography>
 
-        <Typography>
-          • At least 21 years old but not more than 65 years old upon loan
-          maturity
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>Business existing for atleast 3yrs (if trading 5yrs)</li>
+            <li>
+              Credit Card holder with good credit history or any loan history
+              with the bank for references
+            </li>
+            <li>Monthly income of Business atleast 50k a month</li>
+          </ul>
+        </Stack>
+
+        <br />
+        <br />
+        <Typography
+          variant="h2"
+          fontSize={{ xs: 18, md: 28 }}
+          color={"white"}
+          textAlign={"center"}
+          sx={{
+            background:
+              "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
+          }}
+          borderRadius={2}
+          my={{ xs: 2, md: 3 }}
+        >
+          Requirements for Employed Applicants:
         </Typography>
-        <Typography>• Filipino citizen</Typography>
-        <Typography>• With office or residence landline</Typography>
-        <Typography>
-          • Residence or office is within Bank's service processing area
-        </Typography>
-        <Typography>• Latest COE</Typography>
-        <Typography>• Gov’t Id and Company Id</Typography>
-        <Typography>• 1 Month payslip</Typography>
-        <Typography>• Metro manila 25k , outside metro manila- 20k</Typography>
+
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>Fill up application form</li>
+            <li>Company ID + Goverment ID</li>
+            <li>Latest one month payslip and Latest COE</li>
+            <li>Latest POB</li>
+            <li>ITR or 3 months payslip</li>
+          </ul>
+        </Stack>
 
         <Typography
           variant="h2"
@@ -556,135 +388,30 @@ export default function TabsForBanks() {
           color={"white"}
           textAlign={"center"}
           sx={{
-            background: "rgba(44,59,85,1)",
-            width: { xs: "100%", md: "30%" },
+            background:
+              "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
+            width: { xs: "100%", md: "50%" },
           }}
           borderRadius={2}
           my={{ xs: 2, md: 3 }}
         >
-          Employed
-        </Typography>
-        <Typography>
-          • Regular and permanent with current employer and with total
-          employment of at least one (1) year.
-        </Typography>
-        <Typography>
-          • Minimun gross monthly income: <br /> -For Metro Manila: Php 15,000
-          -For outside Metro Manila: Php 12,000
+          Requirements for Self Employed Applicants:
         </Typography>
 
-        <Typography
-          variant="h2"
-          fontSize={{ xs: 18, md: 28 }}
-          color={"white"}
-          textAlign={"center"}
-          sx={{
-            background: "rgba(44,59,85,1)",
-            width: { xs: "100%", md: "30%" },
-          }}
-          borderRadius={2}
-          my={{ xs: 2, md: 3 }}
-        >
-          Self Employed
-        </Typography>
-        <Typography>
-          • With at least two (2) continuous years of profitable operations in
-          the same line of business
-        </Typography>
-        <Typography>
-          • Minimun gross monthly income: <br /> -For Metro Manila: Php 30,000
-          -For outside Metro Manila: Php 25,000
-        </Typography>
-
-        <Typography
-          variant="h2"
-          fontSize={{ xs: 18, md: 28 }}
-          color={"white"}
-          textAlign={"center"}
-          sx={{
-            background: "rgba(44,59,85,1)",
-            width: { xs: "100%", md: "30%" },
-          }}
-          borderRadius={2}
-          my={{ xs: 2, md: 3 }}
-        >
-          REQUIREMENTS
-        </Typography>
-        <Typography>
-          Duly filled - out and signed Loan Application Form
-        </Typography>
-
-        <Typography
-          variant="h2"
-          fontSize={{ xs: 18, md: 28 }}
-          color={"white"}
-          textAlign={"center"}
-          sx={{
-            background: "rgba(44,59,85,1)",
-            width: { xs: "100%", md: "30%" },
-          }}
-          borderRadius={2}
-          my={{ xs: 2, md: 3 }}
-        >
-          Employed
-        </Typography>
-
-        <Typography>
-          • Photocopy of company ID with clear photo and signature
-        </Typography>
-        <Typography>
-          • Photocopy of one (1) valid government-issued photo ID with three (3)
-          specimen signatures
-        </Typography>
-        <Typography>
-          • Income Documents, any of the following:
-          <br />
-          &nbsp;&nbsp;&nbsp; • Latest one (1) month payslip with COE, or
-          &nbsp;&nbsp;&nbsp; • Latest one (1) month payslip with ITR, or
-          &nbsp;&nbsp;&nbsp; • Latest three (3) months payslip
-        </Typography>
-
-        <Typography
-          variant="h2"
-          fontSize={{ xs: 18, md: 28 }}
-          color={"white"}
-          textAlign={"center"}
-          sx={{
-            background: "rgba(44,59,85,1)",
-            width: { xs: "100%", md: "30%" },
-          }}
-          borderRadius={2}
-          my={{ xs: 2, md: 3 }}
-        >
-          Self-Employed
-        </Typography>
-
-        <Typography>
-          • Photocopy of two (2) valid government-issued IDs with three (3)
-          specimen signatures
-        </Typography>
-        <Typography>
-          • Latest two (2) years Audited Financial Statements
-        </Typography>
-        <Typography>• SEC Registration / DTI Certificate</Typography>
-        <Typography>• Business Permit / Mayor's Permit</Typography>
-        <Typography>• Latest three (3) months bank statements</Typography>
-        <Typography>
-          • List of three (3) suppliers and three (3) customers with telephone
-          numbers
-        </Typography>
-        <Typography>• Latest GSIS (if corporation)</Typography>
-
-        <Typography
-          variant="body"
-          color={"orangered"}
-          fontStyle={"italic"}
-          textAlign={"end"}
-          sx={{ textAlign: "right" }}
-          my={2}
-        >
-          * Additional documents may be required by the bank to process the loan
-        </Typography>
+        <Stack mx={4}>
+          <ul className="qualifications">
+            <li>Fill up application form and DPA Form</li>
+            <li>2 valid Goverment ID's with 3 signature segments</li>
+            <li>DTI and Business Permit</li>
+            <li>
+              6 months passbook account or 6 months bank certificate with HDB
+              (with letter of authority) for Bank checking
+            </li>
+            <li>List of suppliers / Customers</li>
+            <li>Photos and Signage of Business</li>
+            <li>ITR with AFS upon 2021 and 2022 or 3 months payslip</li>
+          </ul>
+        </Stack>
       </CustomTabPanel>
     </Box>
   );
