@@ -165,7 +165,7 @@ export default function BasicTabs() {
           <li>DTI and Business Permit</li>
           <li>
             6 months passbook account or 6 months bank certificate with ADB
-            (with letter of authority) for Bank checking
+            (with authorization letter) for Bank checking
           </li>
           <li>List of suppliers / Customers</li>
           <li>Photos and Signage of Business</li>
