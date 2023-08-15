@@ -334,7 +334,7 @@ export default function BasicTabs() {
           <ul className="qualifications">
             <li>PRC ID and 1 valid Government ID with 3 signature</li>
             <li>
-              3 months passbook savings account with letter or authority for
+              3 months passbook savings account with authorization letter for
               bank checking
             </li>
           </ul>
