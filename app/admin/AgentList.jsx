@@ -49,7 +49,7 @@ const AgentList = () => {
               <Stack>
                 <Typography>{`Agent Name: ${agent?.data.name}`}</Typography>
                 <Typography>{`Email address: ${agent?.data.email}`}</Typography>
-                <Typography>{`Referral Link: https://rsbc-official.vercel.app/?ref=${agent?.data.name}`}</Typography>
+                <Typography>{`Referral Link: https://rsbc-marketing.vercel.app/?ref=${agent?.data.name}`}</Typography>
               </Stack>
 
               <Stack flexDirection={"row"}>

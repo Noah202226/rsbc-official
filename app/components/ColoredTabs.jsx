@@ -87,6 +87,33 @@ export default function BasicTabs() {
           <li>With good credit history</li>
         </ul>
       </Stack>
+      <Typography
+        variant="h2"
+        fontSize={{ xs: 18, md: 28 }}
+        color={"white"}
+        textAlign={"center"}
+        sx={{
+          background:
+            "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
+          width: { xs: "100%", md: "50%" },
+        }}
+        borderRadius={2}
+        my={{ xs: 2, md: 3 }}
+      >
+        Requirements for Employed Applicants:
+      </Typography>
+
+      <Stack mx={4}>
+        <ul className="qualifications">
+          <li>Fill up application form</li>
+          <li>Company ID + Goverment ID</li>
+          <li>Latest one month payslip and Latest COE</li>
+          <li>Latest POB</li>
+        </ul>
+      </Stack>
+
+      <br />
+      <br />
 
       <Typography
         variant="h2"
@@ -112,33 +139,6 @@ export default function BasicTabs() {
             the bank for references
           </li>
           <li>Monthly income of Business atleast 50k a month</li>
-        </ul>
-      </Stack>
-
-      <br />
-      <br />
-      <Typography
-        variant="h2"
-        fontSize={{ xs: 18, md: 28 }}
-        color={"white"}
-        textAlign={"center"}
-        sx={{
-          background:
-            "linear-gradient(-90deg, rgba(130,0,0,1) 10%, rgba(120,0,0.1) 100%)",
-          width: { xs: "100%", md: "50%" },
-        }}
-        borderRadius={2}
-        my={{ xs: 2, md: 3 }}
-      >
-        Requirements for Employed Applicants:
-      </Typography>
-
-      <Stack mx={4}>
-        <ul className="qualifications">
-          <li>Fill up application form</li>
-          <li>Company ID + Goverment ID</li>
-          <li>Latest one month payslip and Latest COE</li>
-          <li>Latest POB</li>
         </ul>
       </Stack>
 

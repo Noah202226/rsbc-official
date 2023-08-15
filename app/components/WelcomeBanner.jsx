@@ -328,14 +328,9 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
                     onChange={(e) => setStatus(e.target.value)}
                   >
                     <MenuItem value={"self-employed"}>
-                      Self Employed (1.49% - 1.99%)
+                      Employed, Self Employed, Banker (1.49% - 1.99%)
                     </MenuItem>
-                    <MenuItem value={"employed"}>
-                      Employed (1.49% - 1.99%)
-                    </MenuItem>
-                    <MenuItem value={"bankers"}>
-                      Bankers (1.49% - 1.99%)
-                    </MenuItem>
+
                     <MenuItem value={"doctors"}>Doctors (1.39%)</MenuItem>
                   </Select>
                 </FormControl>
@@ -377,8 +372,10 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
                 fontStyle={"italic"}
                 color={"orangered"}
                 textAlign={"right"}
+                fontSize={11}
               >
-                Note: (1.49% - 1.99%) is computed at 1.49%
+                Note: For self-employed, employed, or bankers is not the exact
+                amount. It's approximately a computation.
               </Typography>
 
               <TextField
