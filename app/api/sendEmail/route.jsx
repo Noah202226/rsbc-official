@@ -6,7 +6,11 @@ import nodemailer from "nodemailer";
 export async function POST(req) {
   const res = await req.json();
 
-  const mailList = ["rsbcprimesmarketing@gmail.com", res.selectedAgentEmail];
+  const mailList = [
+    "rsbcprimesmarketing@gmail.com",
+    "noaligpitan@gmail.com",
+    res.selectedAgentEmail,
+  ];
 
   console.log(res);
   console.log("Agent email:", res.selectedAgentEmail);
