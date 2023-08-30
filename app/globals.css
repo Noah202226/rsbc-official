@@ -346,4 +346,10 @@ dialog {
   .rsbc-welcome-banner {
     display: none;
   }
+
+  .welcomebanner-image {
+    margin-top: 1rem !important;
+    width: 77vw !important;
+    height: 300px !important;
+  }
 }

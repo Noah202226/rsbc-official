@@ -175,7 +175,7 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
           </Grid>
 
           <Grid item md={12} order={{ xs: 1, md: 2 }}>
-            {BannerImg ? (
+            {words[1]?.data?.image1 ? (
               <Image
                 className="bannerImage"
                 // src={BannerImg}
@@ -185,7 +185,12 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
                 height={200}
               />
             ) : (
-              <Skeleton variant="rectangular" width={200} height={200} />
+              <Skeleton
+                className="welcomebanner-image"
+                variant="rectangular"
+                width={630}
+                height={500}
+              />
             )}
           </Grid>
         </Grid>

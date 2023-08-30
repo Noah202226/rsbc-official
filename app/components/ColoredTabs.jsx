@@ -107,8 +107,10 @@ export default function BasicTabs() {
         <ul className="qualifications">
           <li>Fill up application form</li>
           <li>Company ID + Goverment ID</li>
-          <li>Latest one month payslip and Latest COE</li>
-          <li>Latest POB</li>
+          <li>
+            Latest one month payslip and Latest COE (Certificate of Employment)
+          </li>
+          <li>Latest POB (Proof of Billing)</li>
         </ul>
       </Stack>
 
@@ -160,7 +162,7 @@ export default function BasicTabs() {
 
       <Stack mx={4}>
         <ul className="qualifications">
-          <li>Fill up application form and DPA Form</li>
+          <li>Fill up application form and DPA Consent Form</li>
           <li>2 valid Goverment ID's with 3 signature segments</li>
           <li>DTI and Business Permit</li>
           <li>
