@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "RSBC MARKETING",
   description: "RSBC MARKETING, Created by NOAH",
+  keywords: ['RSBC MARKETING','RSBC MARKETING WEBSITE','RSBC MARKETING APPLICATION', 'AGENT LOAN APP', 'RSBC LOAN APPLICATION']
 };
 
 export default function RootLayout({ children }) {
