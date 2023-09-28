@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Card,
+  Chip,
   FormControl,
   Grid,
   InputLabel,
@@ -22,6 +23,7 @@ import emailjs from "@emailjs/browser";
 
 import BannerImg from "../../public/young-couple-holding.jpg";
 import { toast } from "react-toastify";
+import Autocomplete from "./Autocomplete";
 
 const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
   const form = useRef();
@@ -299,10 +301,10 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
 
               <Stack flexDirection={{ xs: "column", md: "row" }}>
                 <FormControl fullWidth sx={{ mb: 1 }} required>
-                  <InputLabel id="demo-simple-select-label">
+                  {/* <InputLabel id="demo-simple-select-label">
                     Desire amount
-                  </InputLabel>
-                  <Select
+                  </InputLabel> */}
+                  {/* <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     name="desired_amount"
@@ -316,7 +318,37 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
                     <MenuItem value={"100,000"}>100,000</MenuItem>
                     <MenuItem value={"50,000"}>50,000</MenuItem>
                     <MenuItem value={"20,000"}>20,000</MenuItem>
-                  </Select>
+                  </Select> */}
+
+                  {/* <Autocomplete
+                    disablePortal
+                    id="combo-box-demo"
+                    options={["","2,000,000", "1,000,000","500,000","300,000","200,000","100,000","50,000","20,000" ]}
+                    // sx={{ width: 300 }}
+                    renderOption={(props, option) => {
+                      return (
+                        <li {...props} key={option}>
+                          {option}
+                        </li>
+                      )
+                    }}
+                    renderTags={(tagValue, getTagProps) => {
+                      return tagValue.map((option, index) => (
+                        <Chip {...getTagProps({ index })} key={option} label={option} />
+                      ))
+                    }}
+                    renderInput={(params) => (
+                      <TextField key={...params.id} {...params}  label="Desired Amount" value={desiredAmount} onChange={e => setDesiredAmount(e.target.value)} />
+                    )}
+                    onChange={(e) => setDesiredAmount(e.target.innerHTML)}
+                    value={desiredAmount}
+                    
+                  /> */}
+
+                  <Autocomplete
+                    inputValue={desiredAmount}
+                    setInputValue={setDesiredAmount}
+                  />
                 </FormControl>
 
                 <FormControl
@@ -398,8 +430,7 @@ const WelcomeBanner = ({ selectedAgent, selectedAgentEmail, words }) => {
                   const selectedStatus = form.current.status.value;
                   let percentage;
                   const selectedLoanDuration = form.current.loan_duration.value;
-                  const selectedDesiredAmount =
-                    form.current.desired_amount.value;
+                  const selectedDesiredAmount = desiredAmount;
 
                   if (selectedStatus == "self-employed") {
                     console.log("self-employed", 0.0149);
